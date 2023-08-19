@@ -63,11 +63,19 @@ function App() {
 
       <Routes>
         <Route path='/' element={<>
-          <div className='main-writing'>
-            <div className='main-writing-1'>Bully's Go와 함께하는</div>
-            <div className='main-writing-2'>분리배출</div>
+          <div className='main'>
+            <div className='main-writing'>
+              <div className='main-writing-1'>Bully's Go와 함께하는</div>
+              <div className='main-writing-2'>분리배출</div>
+            </div>
+            <div className="main-bg">
+              <div className="main-bg-1" style={{ backgroundImage: `url(${BackgroundImage})` }} />
+              <div className="main-bg-2" style={{ backgroundImage: `url(${BackgroundImage})` }} />
+              <div className="main-bg-3" style={{ backgroundImage: `url(${BackgroundImage})` }} />
+
+            </div>
           </div>
-          <div className="main-bg" style={{ backgroundImage: `url(${BackgroundImage})` }} />
+          
           냠냠
         </>}/>
 

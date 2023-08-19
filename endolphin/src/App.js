@@ -37,7 +37,7 @@ function App() {
                   <Nav.Link href="#action1">로그인</Nav.Link>
                   <Nav.Link href="#action2">회원가입</Nav.Link>
                   <NavDropdown
-                    title="Dropdown"
+                    title="마이페이지"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
                     <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
@@ -57,7 +57,7 @@ function App() {
                     className="me-2"
                     aria-label="Search"
                   />
-                  <Button variant="outline-dark">Search</Button>
+                  <Button variant="outline-dark" className='search-button' style={{ fontSize: '14px', whiteSpace: 'nowrap' }}>검색</Button>
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
@@ -85,14 +85,26 @@ function App() {
             </div>
           </div>
 
-          <div>
-          <Button variant="info" className="info-btn">
-            <div className="info-btn-text">Info</div>
-          </Button>{' '}
+          {/* <div>
+          <Button variant="info" size="lg" className='info-btn-container info-btn'>
+          Large button
+          </Button>{' '} */}
+          <div className="btn-container">
+            <Button className="info-btn btn-custom" variant="info" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold' }}>
+              <span style={{ fontSize: '90px'}}>✓</span><br/> 출석하기
+            </Button>
+            <Button className="primary-btn btn-custom" variant="primary" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold'}}>
+              <span style={{ fontSize: '90px'}}>Q</span><br/> 퀴즈
+            </Button>
+            <Button className="success-btn btn-custom" variant="light" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold'}}>
+              <span style={{ fontSize: '90px'}}>+</span><br/>그 외
+            </Button>
+          </div>
 
+          <div className="campaign">
+            <h4><a href="/">현재 진행 중인 캠페인</a></h4>
           </div>
           
-          냠냠
         </>}/>
 
         {/* URL 파라미터 */}

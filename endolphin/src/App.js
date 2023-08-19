@@ -2,7 +2,11 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Container, Form, Nav, Navbar, NavDropdown, Offcanvas} from 'react-bootstrap';
 import { Routes, Route, useNavigate, Router } from 'react-router-dom';
-import BackgroundImage from './img/petImage.png';
+import bg1 from './img/bg1.png';
+import bg2 from './img/bg2.png';
+import bg3 from './img/bg3.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch} from '@fortawesome/free-solid-svg-icons'
 
 function App() {
   
@@ -67,13 +71,25 @@ function App() {
             <div className='main-writing'>
               <div className='main-writing-1'>Bully's Go와 함께하는</div>
               <div className='main-writing-2'>분리배출</div>
-            </div>
-            <div className="main-bg">
-              <div className="main-bg-1" style={{ backgroundImage: `url(${BackgroundImage})` }} />
-              <div className="main-bg-2" style={{ backgroundImage: `url(${BackgroundImage})` }} />
-              <div className="main-bg-3" style={{ backgroundImage: `url(${BackgroundImage})` }} />
 
+              <div className="input-area">
+              <input type="text" className="input-box" placeholder="분리배출 방법이 궁금한 물건을 입력해보세요." />
+              <div className='search-btn'><FontAwesomeIcon icon={faSearch} style={{color: "000000",}} fontSize="25px"/></div>
+              </div>
+              </div>
+
+            <div className="main-bg">
+              <div className="main-bg-1" style={{ backgroundImage: `url(${bg1})` }} />
+              <div className="main-bg-2" style={{ backgroundImage: `url(${bg2})` }} />
+              <div className="main-bg-3" style={{ backgroundImage: `url(${bg3})` }} />
             </div>
+          </div>
+
+          <div>
+          <Button variant="info" className="info-btn">
+            <div className="info-btn-text">Info</div>
+          </Button>{' '}
+
           </div>
           
           냠냠

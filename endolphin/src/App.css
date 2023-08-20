@@ -195,3 +195,16 @@ button.success-btn {
   color: black;
   cursor: pointer;
 }
+
+.item-page-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
+}
+
+.item-page-inst {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

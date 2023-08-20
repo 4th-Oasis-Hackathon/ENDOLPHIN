@@ -9,33 +9,39 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch} from '@fortawesome/free-solid-svg-icons'
 import Campaign from './pages/Campaign';
 import { useState } from 'react';
-import PaperPage from './pages/PaperPage';
+import ItemPage from './pages/ItemPage';
+import data from './data.json';
+
 
 function App() {
   
   let navigate = useNavigate();
 
   const [inputValue, setInputValue] = useState(''); // 입력 값을 관리하는 state
+  const [searchText, setSearchText] = useState('');
 
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
+  const handleSearchFormSubmit = (e) => {
+    e.preventDefault(); // 기본 폼 제출 동작 막기
+    handleSearch(searchText); // 검색 처리
   };
 
-  const handleSearchClick = () => {
-    if (inputValue === '종이') {
-      navigate('/paper');
+  const handleSearch = (searchText) => {
+    if (!searchText.trim()) {
+      navigate('*');
+      return;
     }
-  };
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter' && inputValue === '종이') {
-      navigate('/paper');
+    const result = data.find(item => item.name.includes(searchText));
+    if (result) {
+      // 이동할 페이지 설정 (예: '/paper')
+      navigate(`/item/${result.id}`);
+    } else {
+      navigate('*');
     }
-  };
 
-  const handleInputClick = () => {
-    setInputValue('');
   };
+  
+  
 
   return (
     <>
@@ -59,8 +65,8 @@ function App() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">로그인</Nav.Link>
-                  <Nav.Link href="#action2">회원가입</Nav.Link>
+                  <Nav.Link href="#action1"></Nav.Link>
+                  <Nav.Link href="#action2"></Nav.Link>
                   <NavDropdown
                     title="마이페이지"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
@@ -97,13 +103,13 @@ function App() {
               <div className='main-writing-1'>Bully's Go와 함께하는</div>
               <div className='main-writing-2'>분리배출</div>
 
-              <div className="input-area">
+              <form onSubmit={handleSearchFormSubmit} className="input-area">
               <input type="text" className="input-box" placeholder="분리배출 방법이 궁금한 물건을 입력해보세요." 
-                value={inputValue} onChange={handleInputChange}
-                onKeyDown={handleKeyDown} onClick={handleInputClick}
+                value={searchText} onChange={e => setSearchText(e.target.value)}
+                onClick={() => setSearchText('')}
               />
-              <div className='search-btn' onClick={handleSearchClick}><FontAwesomeIcon icon={faSearch} style={{color: "000000",}} fontSize="25px"/></div>
-              </div>
+              <div className='search-btn' onClick={() => handleSearch(searchText)}><FontAwesomeIcon icon={faSearch} style={{color: "000000",}} fontSize="25px"/></div>
+              </form>
               </div>
 
             <div className="main-bg">
@@ -136,7 +142,8 @@ function App() {
         </>}/>
 
         {/* URL 파라미터 */}
-        <Route path='/paper' element={<PaperPage/>}/>
+        {/* <Route path='/paper' element={<PaperPage/>}/> */}
+        <Route path='/item/:id' element={<ItemPage/>}/>
         <Route path='/Campaign' element={<Campaign/>}/>
         <Route path='*' element={<>404</>}/>
       </Routes>

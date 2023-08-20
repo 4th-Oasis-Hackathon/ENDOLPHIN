@@ -7,10 +7,35 @@ import bg2 from './img/bg2.png';
 import bg3 from './img/bg3.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch} from '@fortawesome/free-solid-svg-icons'
+import Campaign from './pages/Campaign';
+import { useState } from 'react';
+import PaperPage from './pages/PaperPage';
 
 function App() {
   
   let navigate = useNavigate();
+
+  const [inputValue, setInputValue] = useState(''); // 입력 값을 관리하는 state
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleSearchClick = () => {
+    if (inputValue === '종이') {
+      navigate('/paper');
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && inputValue === '종이') {
+      navigate('/paper');
+    }
+  };
+
+  const handleInputClick = () => {
+    setInputValue('');
+  };
 
   return (
     <>
@@ -73,8 +98,11 @@ function App() {
               <div className='main-writing-2'>분리배출</div>
 
               <div className="input-area">
-              <input type="text" className="input-box" placeholder="분리배출 방법이 궁금한 물건을 입력해보세요." />
-              <div className='search-btn'><FontAwesomeIcon icon={faSearch} style={{color: "000000",}} fontSize="25px"/></div>
+              <input type="text" className="input-box" placeholder="분리배출 방법이 궁금한 물건을 입력해보세요." 
+                value={inputValue} onChange={handleInputChange}
+                onKeyDown={handleKeyDown} onClick={handleInputClick}
+              />
+              <div className='search-btn' onClick={handleSearchClick}><FontAwesomeIcon icon={faSearch} style={{color: "000000",}} fontSize="25px"/></div>
               </div>
               </div>
 
@@ -102,13 +130,15 @@ function App() {
           </div>
 
           <div className="campaign">
-            <h4><a href="/">현재 진행 중인 캠페인</a></h4>
+            <h4><a onClick={()=>{ navigate('/Campaign') }}>현재 진행 중인 캠페인</a></h4>
           </div>
-          
+
         </>}/>
 
         {/* URL 파라미터 */}
-        {/* <Route path='*' element={<>404</>}/> */}
+        <Route path='/paper' element={<PaperPage/>}/>
+        <Route path='/Campaign' element={<Campaign/>}/>
+        <Route path='*' element={<>404</>}/>
       </Routes>
       </div>
     </>

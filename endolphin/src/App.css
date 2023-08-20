@@ -96,6 +96,7 @@ button .search-button {
 .search-btn {
   margin-top: 4.5%;
   margin-left: 2%;
+  cursor: pointer;
 }
 
 .btn-container {
@@ -192,4 +193,5 @@ button.success-btn {
 .campaign a {
   text-decoration: none;
   color: black;
+  cursor: pointer;
 }

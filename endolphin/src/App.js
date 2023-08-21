@@ -11,7 +11,7 @@ import Campaign from './pages/Campaign';
 import { useState } from 'react';
 import ItemPage from './pages/ItemPage';
 import data from './data.json';
-
+import Game from './pages/Game';
 
 function App() {
   
@@ -130,8 +130,10 @@ function App() {
             <Button className="primary-btn btn-custom" variant="primary" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold'}}>
               <span style={{ fontSize: '90px'}}>Q</span><br/> 퀴즈
             </Button>
-            <Button className="success-btn btn-custom" variant="light" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold'}}>
-              <span style={{ fontSize: '90px'}}>+</span><br/>그 외
+            <Button
+              onClick={()=>{ navigate('/game') }}
+              className="success-btn btn-custom" variant="light" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold'}}>
+              <span style={{ fontSize: '90px'}}>⚐</span><br/>게임
             </Button>
           </div>
 
@@ -145,6 +147,7 @@ function App() {
         {/* <Route path='/paper' element={<PaperPage/>}/> */}
         <Route path='/item/:id' element={<ItemPage/>}/>
         <Route path='/Campaign' element={<Campaign/>}/>
+        <Route path='/game' element={<Game/>}/>
         <Route path='*' element={<>404</>}/>
       </Routes>
       </div>

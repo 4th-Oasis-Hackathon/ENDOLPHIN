@@ -216,8 +216,8 @@ button.success-btn {
 }
 
 .trash-bin img{
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
   /* border: 2px solid black; */
   margin: 10px; 
 }
@@ -232,6 +232,8 @@ button.success-btn {
 
 .game-design {
   margin: 5%;
+  background-color: rgb(222, 244, 219);
+  
 }
 
 .game-design-item {

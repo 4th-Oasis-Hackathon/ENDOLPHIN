@@ -1,8 +1,9 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
-import plasticBinImage from './imgs/TestPlasticBin.png';
-import paperBinImage from './imgs/TestPaperBin.png';
-
+import plasticBinImage from './imgs/플라스틱쓰레기통.png';
+import paperBinImage from './imgs/종이쓰레기통.png';
+import generalBinImage from './imgs/일반쓰레기통.png';
+import canBinImage from './imgs/캔쓰레기통.png';
 
 function TrashBin({ type, onDrop }) {
     const [, ref] = useDrop({
@@ -21,7 +22,13 @@ function TrashBin({ type, onDrop }) {
         case 'paper':
             image = paperBinImage;
             break;
-        // 추가 쓰레기통 타입에 대한 이미지도 이곳에 추가 가능
+        case 'can':
+            image = canBinImage;
+            break;
+        case 'general':
+            image = generalBinImage;
+            break;
+            // 추가 쓰레기통 타입에 대한 이미지도 이곳에 추가 가능
         default:
             break;
     }

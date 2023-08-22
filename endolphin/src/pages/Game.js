@@ -20,7 +20,7 @@ function Game() {
         { id: 2, type: "paper", name: "종이", image: paperImage },
         // 추가 쓰레기 아이템들
     ]);
-    const bins = ["plastic", "paper", /* 추가 수거함 타입들 */];
+    const bins = ["general", "paper", "plastic", "can" /* 추가 수거함 타입들 */];
 
     const handleDrop = (isCorrectBin, item) => {
         if (isCorrectBin) {

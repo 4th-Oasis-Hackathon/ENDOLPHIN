@@ -81,17 +81,17 @@ function Game() {
         setShuffledTrashItems(shuffle([...trashItems]));
     }, [trashItems]);
     
-    const generateOffset = () => {
-        return {
-          top: Math.floor(Math.random() * 400), // top offset은 0에서 100 픽셀 사이의 랜덤 값
-          left: Math.floor(Math.random() * 800), // left offset은 0에서 100 픽셀 사이의 랜덤 값
-        };
-    };
+    // const generateOffset = () => {
+    //     return {
+    //       top: Math.floor(Math.random() * 400), // top offset은 0에서 100 픽셀 사이의 랜덤 값
+    //       left: Math.floor(Math.random() * 800), // left offset은 0에서 100 픽셀 사이의 랜덤 값
+    //     };
+    // };
     
-    const shuffledTrashItemsWithOffset = shuffledTrashItems.map(item => ({
-    ...item,
-    offset: generateOffset(),
-    }));
+    // const shuffledTrashItemsWithOffset = shuffledTrashItems.map(item => ({
+    // ...item,
+    // offset: generateOffset(),
+    // }));
 
     return (
         <div className='game-design'>
@@ -101,12 +101,14 @@ function Game() {
             {/* {trashItems.map((trash, index) => (
                 <TrashItem key={index} id={trash.id} type={trash.type} name={trash.name} image={trash.image} />
             ))} */}
-            {/* {shuffledTrashItems.map((trash, index) => (
-            <TrashItem key={index} id={trash.id} type={trash.type} name={trash.name} image={trash.image} />
-            ))} */}
-            {shuffledTrashItemsWithOffset.map((trash, index) => (
-            <TrashItem key={index} id={trash.id} type={trash.type} name={trash.name} image={trash.image} style={{ top: trash.offset.top, left: trash.offset.left }} />
+            {shuffledTrashItems.map((trash, index) => (
+            <div className="trash-item-display" >
+            <TrashItem key={index} id={trash.id} type={trash.type} name={trash.name} image={trash.image}/>
+            </div>
             ))}
+            {/* {shuffledTrashItemsWithOffset.map((trash, index) => (
+            <TrashItem key={index} id={trash.id} type={trash.type} name={trash.name} image={trash.image} style={{ top: trash.offset.top, left: trash.offset.left }} />
+            ))} */}
             </div>
             {/* 필요한 경우 다른 컴포넌트 또는 내용 추가 */}
             <div className='game-design-bin'>

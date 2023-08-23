@@ -14,7 +14,9 @@ import { useState } from 'react';
 import ItemPage from './pages/ItemPage';
 import data from './data.json';
 import Game from './pages/Game';
+import Quiz from './pages/Quiz';
 import GameReady from './pages/GameReady';
+import QuizReady from './pages/QuizReady';
 
 function App() {
   
@@ -138,7 +140,9 @@ function App() {
             <Button className="info-btn btn-custom" variant="info" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold' }}>
               <span style={{ fontSize: '90px'}}>✓</span><br/> 출석하기
             </Button>
-            <Button className="primary-btn btn-custom" variant="primary" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold'}}>
+            <Button 
+              onClick={()=>{ navigate('/quiz_ready') }}
+              className="primary-btn btn-custom" variant="primary" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold'}}>
               <span style={{ fontSize: '90px'}}>Q</span><br/> 퀴즈
             </Button>
             <Button
@@ -159,7 +163,9 @@ function App() {
         <Route path='/item/:id' element={<ItemPage/>}/>
         <Route path='/Campaign' element={<Campaign/>}/>
         <Route path='/game' element={<Game/>}/>
+        <Route path='/quiz' element={<Quiz/>}/>
         <Route path='/game_ready' element={<GameReady/>}/>
+        <Route path='/quiz_ready' element={<QuizReady/>}/>
         <Route path='*' element={<>404</>}/>
       </Routes>
       </div>

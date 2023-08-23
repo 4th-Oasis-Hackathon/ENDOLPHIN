@@ -7,7 +7,7 @@ function TrashItem({ type, name, image, id }) {
     });
 
     return (
-    <div ref={ref}>
+    <div ref={ref} className="trash-item">
         <img src={image} alt={name} className="TestPet-img"/>
     </div>
     );

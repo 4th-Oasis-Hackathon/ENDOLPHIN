@@ -5,6 +5,8 @@ import { Routes, Route, useNavigate, Router } from 'react-router-dom';
 import bg1 from './img/bg1.png';
 import bg2 from './img/bg2.png';
 import bg3 from './img/bg3.png';
+import 쑥 from './img/쑥.png';
+import 쑥5 from './img/쑥5.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch} from '@fortawesome/free-solid-svg-icons'
 import Campaign from './pages/Campaign';
@@ -49,7 +51,15 @@ function App() {
       {['md'].map((expand) => (
         <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
           <Container fluid>
-            <Navbar.Brand className="title-location" onClick={()=>{ navigate('/') }}>Bully's Go</Navbar.Brand>
+            <Navbar.Brand className="title-location" onClick={()=>{ navigate('/') }}>
+              분리<span className="highlight">쑥</span>오
+              <img
+                src={쑥}
+                // alt="Bully's Go"              
+                width="40"                    
+                height="40"                  
+                className="d-inline-block align-top logo-img"/>
+              </Navbar.Brand>
             {/* <Navbar.Brand>Bully's Go</Navbar.Brand> */}
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
@@ -60,7 +70,7 @@ function App() {
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title className="title-location" id={`offcanvasNavbarLabel-expand-${expand}`}
                 // style={{fontWeight: 'bold', textAlign: 'right', cursor: 'pointer'}}
-                > Bully's Go
+                > 분리쑥오
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
@@ -81,7 +91,7 @@ function App() {
                     </NavDropdown.Item>
                   </NavDropdown>
                 </Nav>
-                <Form className="d-flex">
+                {/* <Form className="d-flex">
                   <Form.Control
                     type="search"
                     placeholder="ex) 치약, 우산 ..."
@@ -89,7 +99,7 @@ function App() {
                     aria-label="Search"
                   />
                   <Button variant="outline-dark" className='search-button' style={{ fontSize: '14px', whiteSpace: 'nowrap' }}>검색</Button>
-                </Form>
+                </Form> */}
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
@@ -100,7 +110,7 @@ function App() {
         <Route path='/' element={<>
           <div className='main'>
             <div className='main-writing'>
-              <div className='main-writing-1'>Bully's Go와 함께하는</div>
+              <div className='main-writing-1'>쑥오와 함께하는</div>
               <div className='main-writing-2'>분리배출</div>
 
               <form onSubmit={handleSearchFormSubmit} className="input-area">

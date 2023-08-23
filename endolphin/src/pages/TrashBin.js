@@ -4,6 +4,9 @@ import plasticBinImage from './imgs/플라스틱쓰레기통.png';
 import paperBinImage from './imgs/종이쓰레기통.png';
 import generalBinImage from './imgs/일반쓰레기통.png';
 import canBinImage from './imgs/캔쓰레기통.png';
+import 폐건전지BinImage from './imgs/폐건전지쓰레기통.png';
+import 비닐전용BinImage from './imgs/비닐전용쓰레기통.png';
+import 유리전용BinImage from './imgs/유리전용쓰레기통.png';
 
 function TrashBin({ type, onDrop }) {
     const [, ref] = useDrop({
@@ -28,15 +31,26 @@ function TrashBin({ type, onDrop }) {
         case 'general':
             image = generalBinImage;
             break;
+        case '폐건전지':
+            image = 폐건전지BinImage;
+            break;
+        case '비닐전용':
+            image = 비닐전용BinImage;
+            break;
+        case '유리전용':
+            image = 유리전용BinImage;
+            break;
             // 추가 쓰레기통 타입에 대한 이미지도 이곳에 추가 가능
         default:
             break;
     }
 
     return (
-        <div ref={ref} className={`trash-bin trash-bin-${type}`}>
-            {image && <img src={image} alt={`${type} trash bin`} />}
-            <p>{type}</p>
+        <div className='trash-bin-bg'>
+            <div ref={ref} className={`trash-bin trash-bin-${type}`}>
+                {image && <img src={image} alt={`${type} trash bin`} />}
+                {/* <p>{type}</p> */}
+            </div>
         </div>
     );
 }

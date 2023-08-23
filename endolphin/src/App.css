@@ -217,8 +217,12 @@ button.success-btn {
 .trash-bin img{
   width: 200px;
   height: 200px;
-  /* border: 2px solid black; */
-  margin: 14px; 
+  margin: 3px; 
+  /* flex-direction: column; */
+}
+
+.trash-bin-bg {
+  background-color: rgb(235, 235, 235);
 }
 
 /* 특정 수거함 타입에 대한 스타일 */
@@ -230,28 +234,41 @@ button.success-btn {
 /* 다른 타입에 대한 스타일은 여기에 추가 */
 
 .game-design {
-  margin: 1%;
-  background-color: rgb(222, 244, 219);
+  /* margin: 1%; */
+  /* background-color: rgb(222, 244, 219); */
   
 }
 
-.game-design-bin {
+
+.game-design-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 1%; */
+}
+
+.timer-sec{
+  font-weight: 600;
+}
+
+.game-design-score {
   display: flex;
   align-items: center;
   justify-content: center;
   /* margin: 3%; */
 }
-.game-design-timer {
+
+.score-board-1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 3%;
+  font-weight: 600;
 }
-.game-design-score {
+.score-board-2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 3%;
+  font-weight: 600;
 }
 
 .highlight {
@@ -296,6 +313,15 @@ button.success-btn {
   margin-buttom: -10%;
 }
 
+.game-design-bin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 3%; */
+  /* width: 6%; */
+  margin-left: -10%;
+  margin-right: -10%;
+}
 
 .game-main {
   margin: 5%;
@@ -380,5 +406,9 @@ Button.game-btn-2 {
 }
 
 .modal-design {
+  margin-top: 13%;
+}
+
+.result-modal-design {
   margin-top: 13%;
 }

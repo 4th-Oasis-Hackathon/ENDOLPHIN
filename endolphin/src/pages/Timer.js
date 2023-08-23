@@ -21,7 +21,7 @@ function Timer({ initialTime, onTimeUp }) {
     };
     }, [time, onTimeUp]);
 
-    return <div>{time}초 남음</div>;
+    return <div className="timer-sec">{time}초</div>;
 }
 
 export default Timer;

@@ -99,14 +99,6 @@ function Game() {
         setShuffledTrashItems(shuffle([...trashItems]));
     }, [trashItems]);
 
-    const restartGame = () => {
-        setScore(0);
-        setTrashItems([
-          // 초기 쓰레기 아이템들
-        ]);
-        // 다른 상태도 초기화
-    };
-    
 
     return (
         <>
@@ -140,8 +132,8 @@ function Game() {
             </DndProvider>
         </div>
                 <Modal show={showModal} onHide={handleClose} className='modal-design'>
-                {/* <Modal.Header closeButton> */}
-                {/* </Modal.Header> */}
+                {/* <Modal.Header closeButton onHide={handleClose}>
+                </Modal.Header> */}
                 <Modal.Body>
                 <p>제한 시간이 지났어요! <br/>  </p>
                 </Modal.Body>
@@ -149,7 +141,7 @@ function Game() {
                 <Button variant="secondary" onClick={handleShowResult}>결과 보기</Button>
                 <Button variant="success" onClick={() => {
                     window.location.reload(); // 현재 페이지 새로고침
-                }}>다시 해볼래요</Button>
+                }}>다시하기</Button>
                 </Modal.Footer>
                 </Modal>
 

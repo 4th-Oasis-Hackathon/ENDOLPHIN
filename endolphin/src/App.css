@@ -200,6 +200,7 @@ button.success-btn {
   justify-content: center;
   align-items: center;
   margin: 5%;
+  font-weight: 700;
 }
 
 .item-page-inst {
@@ -407,6 +408,7 @@ Button.game-btn-2 {
 
 .modal-design {
   margin-top: 13%;
+  /* background-color: #7b7b7b; */
 }
 
 .result-modal-design {

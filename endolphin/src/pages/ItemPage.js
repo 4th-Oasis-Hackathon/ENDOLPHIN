@@ -11,10 +11,11 @@ function ItemPage() {
     return (
         <>
           <div className='item-page-title'>
-          <h1>{item.name}</h1>
+          <h2 className='item-page-title'># {item.name}</h2>
           </div>
-          <div className='item-page-inst'>
-            <p>{item.instructions}</p>
+          <div>
+            <h2 className='item-page-inst'>분리배출 방법</h2>
+            <p className='item-page-inst'>{item.instructions}</p>
           </div>
         </>
     );

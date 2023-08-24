@@ -37,10 +37,10 @@ function GameReady() {
             <p>분리수거 타임어택 게임 시작 ! <br/> 제한시간은 1분이고 게임은 바로 시작됩니다. </p>
             </Modal.Body>
             <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>안 할래요</Button>
+            <Button variant="secondary" onClick={handleClose}>취소</Button>
             <Button variant="success" onClick={()=>{
                 navigate('/game');
-            }}>바로 시작할게요</Button>
+            }}>시작하기</Button>
             </Modal.Footer>
         </Modal>
 

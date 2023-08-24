@@ -52,7 +52,7 @@ function App() {
     <>
     <div className='App'>
       {['md'].map((expand) => (
-        <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
+        <Navbar expand={false} className="bg-body-tertiary mb-3">
           <Container fluid>
             <Navbar.Brand className="title-location" onClick={()=>{ navigate('/') }}>
               분리<span className="highlight">쑥</span>오
@@ -73,14 +73,30 @@ function App() {
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title className="title-location" id={`offcanvasNavbarLabel-expand-${expand}`}
                 // style={{fontWeight: 'bold', textAlign: 'right', cursor: 'pointer'}}
-                > 분리쑥오
+                onClick={()=>{navigate('/')}}
+                > 분리<span className="highlight">쑥</span>오
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1"></Nav.Link>
-                  <Nav.Link href="#action2"></Nav.Link>
-                  <NavDropdown
+                  <Nav.Link> <img
+                  src={쑥}
+                  width="30"                    
+                  height="30"                  
+                  className="d-inline-block align-top"/>출석하기</Nav.Link>
+                  <Nav.Link onClick={()=>{navigate('/quiz_ready')}}>
+                    <img
+                    src={쑥}
+                    width="30"                    
+                    height="30"                  
+                    className="d-inline-block align-top"/>쑥오퀴즈</Nav.Link>
+                  <Nav.Link onClick={()=>{navigate('/game_ready')}}>
+                  <img
+                  src={쑥}
+                  width="30"                    
+                  height="30"                  
+                  className="d-inline-block align-top"/>쑥오게임</Nav.Link>
+                  {/* <NavDropdown
                     title="마이페이지"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
@@ -92,17 +108,8 @@ function App() {
                     <NavDropdown.Item href="#action5">
                       Something else here
                     </NavDropdown.Item>
-                  </NavDropdown>
+                  </NavDropdown> */}
                 </Nav>
-                {/* <Form className="d-flex">
-                  <Form.Control
-                    type="search"
-                    placeholder="ex) 치약, 우산 ..."
-                    className="me-2"
-                    aria-label="Search"
-                  />
-                  <Button variant="outline-dark" className='search-button' style={{ fontSize: '14px', whiteSpace: 'nowrap' }}>검색</Button>
-                </Form> */}
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>

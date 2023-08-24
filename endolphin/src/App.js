@@ -12,7 +12,7 @@ import { faSearch} from '@fortawesome/free-solid-svg-icons'
 import Campaign from './pages/Campaign';
 import { useState } from 'react';
 import ItemPage from './pages/ItemPage';
-import data from './data.json';
+import data from './data';
 import Game from './pages/Game';
 import Quiz from './pages/Quiz';
 import GameReady from './pages/GameReady';

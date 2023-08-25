@@ -132,24 +132,20 @@ function App() {
               </form>
               </div>
 
-            <div className="main-bg">
+            {/* <div className="main-bg">
               <div className="main-bg-1" style={{ backgroundImage: `url(${bg1})` }} />
               <div className="main-bg-2" style={{ backgroundImage: `url(${bg2})` }} />
               <div className="main-bg-3" style={{ backgroundImage: `url(${bg3})` }} />
-            </div>
+            </div> */}
           </div>
 
-          {/* <div>
-          <Button variant="info" size="lg" className='info-btn-container info-btn'>
-          Large button
-          </Button>{' '} */}
           <div className="btn-container">
-            <Button className="info-btn btn-custom" variant="info" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold' }}>
+            <Button className="info-btn btn-custom" variant="light" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold' }}>
               <span style={{ fontSize: '90px'}}>✓</span><br/> 출석하기
             </Button>
             <Button 
               onClick={()=>{ navigate('/quiz_ready') }}
-              className="primary-btn btn-custom" variant="primary" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold'}}>
+              className="primary-btn btn-custom" variant="light" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold'}}>
               <span style={{ fontSize: '90px'}}>Q</span><br/> 퀴즈
             </Button>
             <Button

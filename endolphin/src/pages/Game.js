@@ -109,7 +109,7 @@ function Game() {
                 <ScoreBoard score={score} />
                 </div>
                 <div className='game-design-timer'>
-                <Timer initialTime={6} onTimeUp={handleTimeUp} />
+                <Timer initialTime={20} onTimeUp={handleTimeUp} />
                 </div>
             <div className='game-design-item'>
             {/* {trashItems.map((trash, index) => (

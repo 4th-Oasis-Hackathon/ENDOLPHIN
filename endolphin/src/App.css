@@ -21,9 +21,9 @@
 
 .main {
   margin: 5%;
-  margin-left: 15%;
+  margin-left: 35%;
   margin-right: 15%;
-  margin-top: -7%;
+  margin-top: -4%;
   font-weight: bolder;
   display: flex;
   align-items: center;
@@ -31,18 +31,22 @@
 }
 
 .main-writing {
-  margin-top: -20%;
+  margin-top: 17%;
 }
 
 .main-writing-1 {
-  font-size: 150%;
-  padding-left: 2.5%;
+  font-size: 160%;
+  padding-left: 20%;
   width: 100%;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 
 .main-writing-2 {
   font-size: 450%;
   width: 100%;
+  padding-left: 12%;
 }
 
 .main-bg-1 {
@@ -90,10 +94,13 @@ button .search-button {
 
 .input-area {
   display: flex;
+  margin-left: -12%;
+  /* justify-content: center;
+  align-items: center; */
 }
 
 .search-btn {
-  margin-top: 4.5%;
+  margin-top: 4%;
   margin-left: 2%;
   cursor: pointer;
 }
@@ -104,15 +111,13 @@ button .search-button {
   align-items: center;
   /* width: 100%; */
 
-  margin: 5%;
-  margin-top: -28%;
-  /* margin-right: 25%; */
-  margin-left: -28%;
+  margin: 1%;
+  margin-top: -45px;
 }
 
 .info-btn {
-  width: 160px;
-  height: 200px; /* 패딩을 사용해 높이 조절 */
+  width: 180px;
+  height: 220px; /* 패딩을 사용해 높이 조절 */
   padding-bottom: 10%;
   display: flex;
   align-items: center;
@@ -122,27 +127,30 @@ button .search-button {
   /* border: none; */
   cursor: pointer;
 
-  margin: 1%;
+  margin: 1.5%;
 }
 
 button.info-btn {
   border-radius: 30px;
-  background-color: rgb(117, 209, 255);
+  /* background-color: rgb(97, 214, 67); */
+  background-color: #89E94E;
 }
 
 button.primary-btn {
   border-radius: 30px;
+  background-color: #35C365;
 }
 
 button.success-btn {
-  background-color: rgb(157, 71, 250);
   border-radius: 30px;
+  background-color: #369239;
+  /* background-color: green; */
 }
 
 
 .primary-btn {
-  width: 160px;
-  height: 200px; /* 패딩을 사용해 높이 조절 */
+  width: 180px;
+  height: 220px; /* 패딩을 사용해 높이 조절 */
   padding-bottom: 10%;
   display: flex;
   align-items: center;
@@ -152,12 +160,12 @@ button.success-btn {
   border: none;
   cursor: pointer;
 
-  margin: 1%;
+  margin: 1.5%;
 }
 
 .success-btn {
-  width: 160px;
-  height: 200px; /* 패딩을 사용해 높이 조절 */
+  width: 180px;
+  height: 220px; /* 패딩을 사용해 높이 조절 */
   padding-bottom: 10%;
   display: flex;
   align-items: center;
@@ -167,7 +175,7 @@ button.success-btn {
   border: none;
   cursor: pointer;
 
-  margin: 1%;
+  margin: 1.5%;
 }
 
 /* 작은 화면에 대한 반응형 설정 */

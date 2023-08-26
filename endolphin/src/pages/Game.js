@@ -27,6 +27,9 @@ import 스티로폼쓰레기 from './imgs/스티로폼쓰레기.png';
 import 유리병쓰레기 from './imgs/유리병쓰레기.png';
 import { Modal, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import 의류쓰레기 from './imgs/의류쓰레기.png';
+import 영농폐기물 from './imgs/영농폐기물.png';
+import 형광등쓰레기 from './imgs/형광등쓰레기.png';
 
 function Game() {
     const [score, setScore] = useState(0);
@@ -50,9 +53,12 @@ function Game() {
         { id: 14, type: "plastic", name: "색깔플라스틱병쓰레기", image: 색깔플라스틱병쓰레기 },
         { id: 15, type: "plastic", name: "스티로폼쓰레기", image: 스티로폼쓰레기 },
         { id: 16, type: "유리전용", name: "유리병쓰레기", image: 유리병쓰레기 },
+        { id: 16, type: "유리수거함", name: "의류쓰레기", image: 의류쓰레기 },
+        { id: 16, type: "마대보관통", name: "영농폐기물", image: 영농폐기물 },
+        { id: 16, type: "형광등쓰레기통", name: "형광등쓰레기", image: 형광등쓰레기 },
         // 추가 쓰레기 아이템들
-    ]);
-    const bins = ["general", "paper", "plastic", "can", "폐건전지", "비닐전용", "유리전용" /* 추가 수거함 타입들 */];
+    ]);                                                                     
+    const bins = ["general", "paper", "plastic", "can", "폐건전지", "비닐전용", "유리전용", "의류수거함", "마대보관통", "형광등쓰레기통" /* 추가 수거함 타입들 */];
 
     const handleDrop = (isCorrectBin, item) => {
         if (isCorrectBin) {
@@ -109,7 +115,7 @@ function Game() {
                 <ScoreBoard score={score} />
                 </div>
                 <div className='game-design-timer'>
-                <Timer initialTime={20} onTimeUp={handleTimeUp} />
+                <Timer initialTime={10000} onTimeUp={handleTimeUp} />
                 </div>
             <div className='game-design-item'>
             {/* {trashItems.map((trash, index) => (
@@ -126,7 +132,9 @@ function Game() {
             <div className='game-design-bin'>
             {/* <TrashBin type="plastic" onDrop={handleDrop} /> */}
             {bins.map((type, index) => (
+                <div className='game-design-bin2'>
                 <TrashBin key={index} type={type} onDrop={handleDrop} />
+                </div>
             ))}
             </div>
             </DndProvider>

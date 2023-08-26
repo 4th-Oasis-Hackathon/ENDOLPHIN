@@ -7,6 +7,9 @@ import canBinImage from './imgs/캔쓰레기통.png';
 import 폐건전지BinImage from './imgs/폐건전지쓰레기통.png';
 import 비닐전용BinImage from './imgs/비닐전용쓰레기통.png';
 import 유리전용BinImage from './imgs/유리전용쓰레기통.png';
+import 의류수거함 from './imgs/의류수거함.png';
+import 마대보관통 from './imgs/마대보관통.png';
+import 형광등쓰레기통 from './imgs/형광등쓰레기통.png';
 
 function TrashBin({ type, onDrop }) {
     const [, ref] = useDrop({
@@ -39,6 +42,15 @@ function TrashBin({ type, onDrop }) {
             break;
         case '유리전용':
             image = 유리전용BinImage;
+            break;
+        case '의류수거함':
+            image = 의류수거함;
+            break;
+        case '마대보관통':
+            image = 마대보관통;
+            break;
+        case '형광등쓰레기통':
+            image = 형광등쓰레기통;
             break;
             // 추가 쓰레기통 타입에 대한 이미지도 이곳에 추가 가능
         default:

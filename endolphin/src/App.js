@@ -17,6 +17,7 @@ import Game from './pages/Game';
 import Quiz from './pages/Quiz';
 import GameReady from './pages/GameReady';
 import QuizReady from './pages/QuizReady';
+import NextStep from './pages/NextStep';
 
 function App() {
   
@@ -50,13 +51,13 @@ function App() {
 
   return (
     <>
-    <div className='App'>
+    <div className='App custom-cursor'>
       {['md'].map((expand) => (
-        <Navbar expand={false} className="bg-body-tertiary mb-3">
+        <Navbar expand={false} className="bg-body-tertiary mb-3 custom-cursor">
           <Container fluid>
-            <Navbar.Brand className="title-location" onClick={()=>{ navigate('/') }}>
-              분리<span className="highlight">쑥</span>오
-              <img
+            <Navbar.Brand className="title-location custom-cursor" onClick={()=>{ navigate('/') }}>
+              분리<span className="highlight custom-cursor">쑥</span>오
+              <img 
                 src={쑥}
                 // alt="Bully's Go"              
                 width="40"                    
@@ -71,7 +72,7 @@ function App() {
               placement="end"
             >
               <Offcanvas.Header closeButton>
-                <Offcanvas.Title className="title-location" id={`offcanvasNavbarLabel-expand-${expand}`}
+                <Offcanvas.Title className="title-location custom-cursor" id={`offcanvasNavbarLabel-expand-${expand}`}
                 // style={{fontWeight: 'bold', textAlign: 'right', cursor: 'pointer'}}
                 onClick={()=>{navigate('/')}}
                 > 분리<span className="highlight">쑥</span>오
@@ -140,17 +141,17 @@ function App() {
           </div>
 
           <div className="btn-container">
-            <Button className="info-btn btn-custom" variant="light" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold' }}>
+            <Button className="info-btn btn-custom custom-cursor" variant="light" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold' }}>
               <span style={{ fontSize: '90px'}}>✓</span><br/> 출석하기
             </Button>
             <Button 
               onClick={()=>{ navigate('/quiz_ready') }}
-              className="primary-btn btn-custom" variant="light" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold'}}>
+              className="primary-btn btn-custom custom-cursor" variant="light" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold'}}>
               <span style={{ fontSize: '90px'}}>Q</span><br/> 퀴즈
             </Button>
             <Button
               onClick={()=>{ navigate('/game_ready') }}
-              className="success-btn btn-custom" variant="light" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold'}}>
+              className="success-btn btn-custom custom-cursor" variant="light" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold'}}>
               <span style={{ fontSize: '90px'}}>⚐</span><br/>게임
             </Button>
           </div>
@@ -166,6 +167,7 @@ function App() {
         <Route path='/item/:id' element={<ItemPage/>}/>
         <Route path='/Campaign' element={<Campaign/>}/>
         <Route path='/game' element={<Game/>}/>
+        <Route path='/game_step2' element={<NextStep/>}/>
         <Route path='/quiz' element={<Quiz/>}/>
         <Route path='/game_ready' element={<GameReady/>}/>
         <Route path='/quiz_ready' element={<QuizReady/>}/>

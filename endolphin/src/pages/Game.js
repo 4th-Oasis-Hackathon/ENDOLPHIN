@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import backgroundMusic from './bgm/Sand Castle - Quincas Moreira.mp3'; 
+import 맞게들어감 from './bgm/맞게들어감.mp3'; 
+import 잘못넣음 from './bgm/잘못넣음.mp3'; 
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { useDrag } from 'react-dnd';
@@ -35,6 +38,36 @@ import NextStep from './NextStep';
 function Game() {
     const [score, setScore] = useState(0);
     let navigate = useNavigate();
+    const bgmRef = useRef(null);
+
+    const audio = new Audio(backgroundMusic);
+    const [playAudio, setPlayAudio] = useState(true);
+
+    useEffect(() => {
+        if (playAudio) {
+            // play() 메서드가 반환하는 Promise를 사용하여 play가 완료된 후 후속 작업을 합니다.
+            audio.play().then(() => {
+                // 여기에 play가 성공적으로 완료된 후의 코드를 작성할 수 있습니다.
+            }).catch(error => {
+                console.error("오디오 재생 오류:", error);
+            });
+            return () => {
+                audio.pause();
+            };
+        }
+    }, [playAudio]);
+
+    useEffect(() => {
+        if (bgmRef.current) {
+            bgmRef.current.play();
+
+            // 음악이 끝나면 다시 시작
+            bgmRef.current.addEventListener('ended', () => {
+                bgmRef.current.currentTime = 0;
+                bgmRef.current.play();
+            });
+        }
+    }, []);
 
 
     const [trashItems, setTrashItems] = useState([
@@ -59,16 +92,22 @@ function Game() {
         // { id: 16, type: "의류수거함", name: "의류쓰레기", image: 의류쓰레기 },
         // { id: 16, type: "마대보관통", name: "영농폐기물", image: 영농폐기물 },
         // { id: 16, type: "형광등쓰레기통", name: "형광등쓰레기", image: 형광등쓰레기 },
+        // { id: 16, type: "general", name: "달걀껍질쓰레기", image: 달걀껍질쓰레기 },
         // 추가 쓰레기 아이템들
     ]);                                                                     
     const bins = ["general", "paper", "plastic", "can", "비닐전용" /* 추가 수거함 타입들 */];
                                                                                 //, "폐건전지", "유리전용", "의류수거함", "마대보관통", "형광등쓰레기통"
     const handleDrop = (isCorrectBin, item) => {
+        const effectSound1 = new Audio(맞게들어감);
+        const effectSound2 = new Audio(잘못넣음);
+
         if (isCorrectBin) {
+            effectSound1.play();
             setScore(score + 1); // 점수 증가
             setTrashItems(prevItems => prevItems.filter(trash => trash.id !== item.id)); // 쓰레기 아이템 제거
             console.log("Correct!", item);
         } else {
+            effectSound2.play();
             console.log("Wrong bin!", item);
         }
         // 드롭 로직 (예: 점수 증가)
@@ -119,6 +158,7 @@ function Game() {
 
     return (
         <>  
+            <audio ref={bgmRef} src={backgroundMusic} preload="auto" />
         {/* <div className={`game-design ${isGameActive ? 'custom-cursor' : ''}`}> */}
         <div className='custom-cursor'>
         {/* <div className={isGameActive ? 'custom-cursor' : ''}> */}

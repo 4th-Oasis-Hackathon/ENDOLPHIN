@@ -30,9 +30,8 @@ import { useNavigate } from 'react-router-dom';
 import 의류쓰레기 from './imgs/의류쓰레기.png';
 import 영농폐기물 from './imgs/영농폐기물.png';
 import 형광등쓰레기 from './imgs/형광등쓰레기.png';
-import NextStep from './NextStep';
 
-function Game() {
+function NextStep() {
     const [score, setScore] = useState(0);
     let navigate = useNavigate();
 
@@ -40,11 +39,11 @@ function Game() {
     const [trashItems, setTrashItems] = useState([
         // { id: 1, type: "plastic", name: "플라스틱", image: plasticImage },
         // { id: 2, type: "paper", name: "종이", image: paperImage },
-        { id: 3, type: "비닐전용", name: "과자봉지", image: 과자봉지쓰레기 },
-        { id: 4, type: "plastic", name: "병뚜껑", image: 병뚜껑쓰레기 },
-        { id: 5, type: "비닐전용", name: "비닐봉지", image: 비닐봉지쓰레기 },
-        { id: 6, type: "can", name: "스프레이용기", image: 스프레이용기쓰레기 },
-        //{ id: 7, type: "폐건전지", name: "폐건전지", image: 폐건전지쓰레기 },
+        // { id: 3, type: "비닐전용", name: "과자봉지", image: 과자봉지쓰레기 },
+        // { id: 4, type: "plastic", name: "병뚜껑", image: 병뚜껑쓰레기 },
+        // { id: 5, type: "비닐전용", name: "비닐봉지", image: 비닐봉지쓰레기 },
+        // { id: 6, type: "can", name: "스프레이용기", image: 스프레이용기쓰레기 },
+        { id: 7, type: "폐건전지", name: "폐건전지", image: 폐건전지쓰레기 },
         // { id: 8, type: "plastic", name: "플라스틱병", image: 플라스틱병쓰레기 },
         // { id: 9, type: "plastic", name: "플라스틱빨대", image: 플라스틱빨대쓰레기 },
         // { id: 10, type: "유리전용", name: "깨진유리쓰레기", image: 깨진유리쓰레기 },
@@ -56,13 +55,13 @@ function Game() {
         // { id: 16, type: "유리전용", name: "유리병쓰레기", image: 유리병쓰레기 },
 
         
-        // { id: 16, type: "의류수거함", name: "의류쓰레기", image: 의류쓰레기 },
-        // { id: 16, type: "마대보관통", name: "영농폐기물", image: 영농폐기물 },
-        // { id: 16, type: "형광등쓰레기통", name: "형광등쓰레기", image: 형광등쓰레기 },
+        { id: 16, type: "의류수거함", name: "의류쓰레기", image: 의류쓰레기 },
+        { id: 17, type: "마대보관통", name: "영농폐기물", image: 영농폐기물 },
+        { id: 18, type: "형광등쓰레기통", name: "형광등쓰레기", image: 형광등쓰레기 },
         // 추가 쓰레기 아이템들
     ]);                                                                     
-    const bins = ["general", "paper", "plastic", "can", "비닐전용" /* 추가 수거함 타입들 */];
-                                                                                //, "폐건전지", "유리전용", "의류수거함", "마대보관통", "형광등쓰레기통"
+    const bins = [ "폐건전지", "유리전용", "의류수거함", "마대보관통", "형광등쓰레기통"/* 추가 수거함 타입들 */];
+    //"general", "paper", "plastic", "can", "비닐전용"                         //, "폐건전지", "유리전용", "의류수거함", "마대보관통", "형광등쓰레기통"
     const handleDrop = (isCorrectBin, item) => {
         if (isCorrectBin) {
             setScore(score + 1); // 점수 증가
@@ -114,15 +113,10 @@ function Game() {
         }
     }, [trashItems]);
 
-    const [isGameActive, setIsGameActive] = useState(true);
-
 
     return (
-        <>  
-        {/* <div className={`game-design ${isGameActive ? 'custom-cursor' : ''}`}> */}
-        <div className='custom-cursor'>
-        {/* <div className={isGameActive ? 'custom-cursor' : ''}> */}
-        
+        <>
+        <div className='game-design'>
             <DndProvider backend={HTML5Backend}>
             {/* TrashItem 컴포넌트를 렌더링 */}
                 <div className='game-design-score'>
@@ -143,7 +137,7 @@ function Game() {
 
             </div>
             {/* 필요한 경우 다른 컴포넌트 또는 내용 추가 */}
-            <div className='game-design-bin custom-cursor'>
+            <div className='game-design-bin'>
             {/* <TrashBin type="plastic" onDrop={handleDrop} /> */}
             {bins.map((type, index) => (
                 <div className='game-design-bin2'>
@@ -160,8 +154,8 @@ function Game() {
                 <p>제한 시간이 지났어요! <br/>  </p>
                 </Modal.Body>
                 <Modal.Footer>
-                <Button variant="secondary" className="modal-cursor custom-cursor" onClick={handleShowResult}>결과 보기</Button>
-                <Button variant="success" className="modal-cursorcustom-cursor" onClick={() => {
+                <Button variant="secondary"className='custom-cursor' onClick={handleShowResult}>결과 보기</Button>
+                <Button variant="success" className='custom-cursor' onClick={() => {
                     window.location.reload(); // 현재 페이지 새로고침
                 }}>다시하기</Button>
                 </Modal.Footer>
@@ -174,8 +168,8 @@ function Game() {
                         {/* 이곳에 남은 시간을 표시하려면 해당 값을 상태로 관리하고 출력해야 합니다. */}
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" className="modal-cursor custom-cursor" onClick={()=>{ navigate('/game_step2')} }>다음 단계</Button>
-                        <Button variant="success" className="modal-cursor custom-cursor" onClick={() => {
+                        <Button variant="secondary" className='custom-cursor' >엄빠에게 자랑하기</Button>
+                        <Button variant="success" className='custom-cursor' onClick={() => {
                             navigate('/'); // 현재 페이지 새로고침
                         }}>나가기</Button>
                     </Modal.Footer>
@@ -188,4 +182,4 @@ function Game() {
         );
     }
 
-    export default Game;
+    export default NextStep;

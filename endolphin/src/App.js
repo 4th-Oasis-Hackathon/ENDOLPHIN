@@ -11,6 +11,7 @@ import 게임전체배경 from './img/게임전체배경.png';
 import 쑤기와함께하는 from './img/쑤기와함께하는.png';
 import 분리배출 from './img/분리배출.png';
 import 쓰레기차 from './img/쓰레기차.png';
+import 게임시작버튼 from './img/게임시작버튼.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch} from '@fortawesome/free-solid-svg-icons'
 import Campaign from './pages/Campaign';
@@ -22,6 +23,8 @@ import Quiz from './pages/Quiz';
 import GameReady from './pages/GameReady';
 import QuizReady from './pages/QuizReady';
 import NextStep from './pages/NextStep';
+import { useLocation } from 'react-router-dom';
+import VideoComponent from './pages/VideoComponent';
 
 function App() {
   
@@ -29,6 +32,18 @@ function App() {
 
   const [inputValue, setInputValue] = useState(''); // 입력 값을 관리하는 state
   const [searchText, setSearchText] = useState('');
+
+  // const location = useLocation();
+
+  // const isMainPage = location.pathname === '/';
+
+  // const appStyles = isMainPage ? {
+  //   backgroundImage: "url('./img/게임전체배경.png')",
+  //   backgroundSize: 'cover',
+  //   backgroundPosition: 'center center',
+  //   backgroundRepeat: 'no-repeat',
+  //   minHeight: '100vh'
+  // } : {};
 
   const handleSearchFormSubmit = (e) => {
     e.preventDefault(); // 기본 폼 제출 동작 막기
@@ -55,7 +70,7 @@ function App() {
 
   return (
     <>
-    <div className='App custom-cursor'>
+    <div className='custom-cursor' >
       {['md'].map((expand) => (
         <Navbar expand={false} className="bg-body-tertiary mb-3 custom-cursor">
           <Container fluid>
@@ -84,36 +99,23 @@ function App() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link> <img
+                  {/* <Nav.Link> <img
                   src={쑥}
                   width="30"                    
                   height="30"                  
-                  className="d-inline-block align-top"/>출석하기</Nav.Link>
-                  <Nav.Link onClick={()=>{navigate('/quiz_ready')}}>
+                  className="d-inline-block align-top"/>출석하기</Nav.Link> */}
+                  {/* <Nav.Link onClick={()=>{navigate('/quiz_ready')}}>
                     <img
                     src={쑥}
                     width="30"                    
                     height="30"                  
-                    className="d-inline-block align-top"/>쑥오퀴즈</Nav.Link>
+                    className="d-inline-block align-top"/>쑥오퀴즈</Nav.Link> */}
                   <Nav.Link onClick={()=>{navigate('/game_ready')}}>
                   <img
                   src={쑥}
                   width="30"                    
                   height="30"                  
                   className="d-inline-block align-top"/>쑥오게임</Nav.Link>
-                  {/* <NavDropdown
-                    title="마이페이지"
-                    id={`offcanvasNavbarDropdown-expand-${expand}`}
-                  >
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
-                      Another action
-                    </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
-                      Something else here
-                    </NavDropdown.Item>
-                  </NavDropdown> */}
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
@@ -122,7 +124,9 @@ function App() {
       ))}
 
       <Routes>
+        
         <Route path='/' element={<>
+        <div className='AppBG'>
           <img 
               src={쑤기와함께하는} 
               className="ssuk-with" 
@@ -138,17 +142,23 @@ function App() {
                 className="ssuk-location" 
               />
             <img 
+                src={게임시작버튼} 
+                className="game-start-btn" 
+                onClick={() => {navigate('/video')}}
+              />
+            <img 
                 src={쓰레기차} 
                 className="trashcar-location" 
               />
           </div>
-
+          </div>
         </>}/>
 
         {/* URL 파라미터 */}
         {/* <Route path='/paper' element={<PaperPage/>}/> */}
         <Route path='/item/:id' element={<ItemPage/>}/>
         <Route path='/Campaign' element={<Campaign/>}/>
+        <Route path='/video' element={<VideoComponent/>}/>
         <Route path='/game' element={<Game/>}/>
         <Route path='/game_step2' element={<NextStep/>}/>
         <Route path='/quiz' element={<Quiz/>}/>

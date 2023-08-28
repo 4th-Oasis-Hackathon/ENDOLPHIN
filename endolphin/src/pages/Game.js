@@ -43,6 +43,8 @@ function Game() {
     const audio = new Audio(backgroundMusic);
     const [playAudio, setPlayAudio] = useState(true);
 
+
+
     useEffect(() => {
         if (playAudio) {
             // play() 메서드가 반환하는 Promise를 사용하여 play가 완료된 후 후속 작업을 합니다.
@@ -200,7 +202,7 @@ function Game() {
                 <p>제한 시간이 지났어요! <br/>  </p>
                 </Modal.Body>
                 <Modal.Footer>
-                <Button variant="secondary" className="modal-cursor custom-cursor" onClick={handleShowResult}>결과 보기</Button>
+                <Button variant="secondary" className="modal-cursor custom-cursor" onClick={()=>{navigate('/')}}>결과 보기</Button>
                 <Button variant="success" className="modal-cursorcustom-cursor" onClick={() => {
                     window.location.reload(); // 현재 페이지 새로고침
                 }}>다시하기</Button>
@@ -211,12 +213,12 @@ function Game() {
                 <Modal show={showResultModal} onHide={handleCloseResult} className='result-modal-design custom-cursor'>
                     <Modal.Body>
                         <p>우와 ~ {score}점!! </p>
-                        {/* 이곳에 남은 시간을 표시하려면 해당 값을 상태로 관리하고 출력해야 합니다. */}
+                        {/* 이곳에 남은 시간을 표시하려면 해당 값을 상태로 관리하고 출력해야함. */}
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" className="modal-cursor custom-cursor" onClick={()=>{ navigate('/game_step2')} }>다음 단계</Button>
+                        <Button variant="secondary" className="modal-cursor custom-cursor" onClick={()=>{navigate('/game_step2')}} >다음 단계</Button>
                         <Button variant="success" className="modal-cursor custom-cursor" onClick={() => {
-                            navigate('/'); // 현재 페이지 새로고침
+                            navigate('/'); 
                         }}>나가기</Button>
                     </Modal.Footer>
                 </Modal>

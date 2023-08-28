@@ -1,3 +1,4 @@
+/* global Kakao */ 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Container, Form, Nav, Navbar, NavDropdown, Offcanvas} from 'react-bootstrap';
@@ -25,6 +26,7 @@ import QuizReady from './pages/QuizReady';
 import NextStep from './pages/NextStep';
 import { useLocation } from 'react-router-dom';
 import VideoComponent from './pages/VideoComponent';
+import { useEffect } from 'react';
 
 function App() {
   
@@ -33,17 +35,13 @@ function App() {
   const [inputValue, setInputValue] = useState(''); // 입력 값을 관리하는 state
   const [searchText, setSearchText] = useState('');
 
-  // const location = useLocation();
 
-  // const isMainPage = location.pathname === '/';
+useEffect(() => {
+  if (!Kakao.isInitialized()) {
+      Kakao.init('a2cb9f15e4727685ac12b5d908d19dd6');
+  }
+}, []);
 
-  // const appStyles = isMainPage ? {
-  //   backgroundImage: "url('./img/게임전체배경.png')",
-  //   backgroundSize: 'cover',
-  //   backgroundPosition: 'center center',
-  //   backgroundRepeat: 'no-repeat',
-  //   minHeight: '100vh'
-  // } : {};
 
   const handleSearchFormSubmit = (e) => {
     e.preventDefault(); // 기본 폼 제출 동작 막기

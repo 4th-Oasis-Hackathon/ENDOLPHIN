@@ -507,3 +507,85 @@ Button.game-btn-2 {
 body {
   cursor: url('./pages/imgs/손가락.png') 25 25, auto !important;
 }
+
+.App {
+  background-image: url('./img/게임전체배경.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.ssuk-with {
+  display: block;
+  width: 170px; /* 기본 너비 설정. 필요에 따라 조정 가능 */
+  height: 130px; /* 기본 높이 설정. 필요에 따라 조정 가능 */
+  margin-left: 33%; /* 기본적으로 이미지를 조금 오른쪽으로 이동시킵니다. */
+}
+
+/* 화면 너비가 768px 미만일 경우 */
+@media (max-width: 768px) {
+  .ssuk-with .bunli-location{
+    width: 20%;
+    margin-left: 10%; /* 작은 화면에서는 더 많이 오른쪽으로 이동시킵니다. */
+  }
+}
+
+/* 화면 너비가 1024px 이상일 경우 */
+@media (min-width: 1024px) {
+  .ssuk-with .bunli-location{
+    margin-left: 10%; /* 큰 화면에서는 조금만 오른쪽으로 이동시킵니다. */
+  }
+}
+
+/* 화면 너비가 480px 미만일 경우 (일반적으로 모바일 환경을 가리킵니다) */
+@media (max-width: 480px) {
+  .App {
+    /* 예: 배경 이미지 위치를 조금 더 상단으로 옮기고 싶을 때 */
+    background-position: center center;
+  }
+}
+
+/* 화면 너비가 481px ~ 768px 사이일 경우 (일반적으로 태블릿 환경을 가리킵니다) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .App {
+    /* 예: 배경 이미지 위치를 가운데로 조정하고 싶을 때 */
+    background-position: center center;
+  }
+}
+
+/* 화면 너비가 769px 이상일 경우 (일반적으로 데스크탑 환경을 가리킵니다) */
+@media (min-width: 769px) {
+  .App {
+    /* 예: 배경 이미지 위치를 조금 더 하단으로 옮기고 싶을 때 */
+    /* background-position: top center; */
+  }
+}
+
+.bunli-location {
+  display: block;
+  width: 350px; /* 기본 너비 설정. 필요에 따라 조정 가능 */
+  height: 250px; /* 기본 높이 설정. 필요에 따라 조정 가능 */
+  margin-left: 39%;
+  margin-top: -5%;
+}
+
+.ssuk-location {
+  display: block;
+  width: 340px; 
+  height: 340px;
+  margin-left: 2%;
+}
+
+.trashcar-location {
+  display: block;
+  width: 340px; 
+  height: 340px;
+  margin-left: 20%;
+}
+
+.main-character-location {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}

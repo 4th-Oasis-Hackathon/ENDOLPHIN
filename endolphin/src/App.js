@@ -7,6 +7,10 @@ import bg2 from './img/bg2.png';
 import bg3 from './img/bg3.png';
 import 쑥 from './img/쑥.png';
 import 쑥5 from './img/쑥5.png';
+import 게임전체배경 from './img/게임전체배경.png';
+import 쑤기와함께하는 from './img/쑤기와함께하는.png';
+import 분리배출 from './img/분리배출.png';
+import 쓰레기차 from './img/쓰레기차.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch} from '@fortawesome/free-solid-svg-icons'
 import Campaign from './pages/Campaign';
@@ -119,45 +123,24 @@ function App() {
 
       <Routes>
         <Route path='/' element={<>
-          <div className='main'>
-            <div className='main-writing'>
-              <div className='main-writing-1'>쑥오와 함께하는</div>
-              <div className='main-writing-2'>분리배출</div>
+          <img 
+              src={쑤기와함께하는} 
+              className="ssuk-with" 
+            />
 
-              <form onSubmit={handleSearchFormSubmit} className="input-area">
-              <input type="text" className="input-box" placeholder="분리배출 방법이 궁금한 물건을 입력해보세요." 
-                value={searchText} onChange={e => setSearchText(e.target.value)}
-                onClick={() => setSearchText('')}
+          <img 
+              src={분리배출} 
+              className="bunli-location" 
+            />
+          <div className='main-character-location'>
+            <img 
+                src={쑥} 
+                className="ssuk-location" 
               />
-              <div className='search-btn' onClick={() => handleSearch(searchText)}><FontAwesomeIcon icon={faSearch} style={{color: "000000",}} fontSize="25px"/></div>
-              </form>
-              </div>
-
-            {/* <div className="main-bg">
-              <div className="main-bg-1" style={{ backgroundImage: `url(${bg1})` }} />
-              <div className="main-bg-2" style={{ backgroundImage: `url(${bg2})` }} />
-              <div className="main-bg-3" style={{ backgroundImage: `url(${bg3})` }} />
-            </div> */}
-          </div>
-
-          <div className="btn-container">
-            <Button className="info-btn btn-custom custom-cursor" variant="light" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold' }}>
-              <span style={{ fontSize: '90px'}}>✓</span><br/> 출석하기
-            </Button>
-            <Button 
-              onClick={()=>{ navigate('/quiz_ready') }}
-              className="primary-btn btn-custom custom-cursor" variant="light" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold'}}>
-              <span style={{ fontSize: '90px'}}>Q</span><br/> 퀴즈
-            </Button>
-            <Button
-              onClick={()=>{ navigate('/game_ready') }}
-              className="success-btn btn-custom custom-cursor" variant="light" style={{ fontSize: '25px', color: '#fff', fontWeight: 'bold'}}>
-              <span style={{ fontSize: '90px'}}>⚐</span><br/>게임
-            </Button>
-          </div>
-
-          <div className="campaign">
-            <h4><a onClick={()=>{ navigate('/Campaign') }}>현재 진행 중인 캠페인</a></h4>
+            <img 
+                src={쓰레기차} 
+                className="trashcar-location" 
+              />
           </div>
 
         </>}/>

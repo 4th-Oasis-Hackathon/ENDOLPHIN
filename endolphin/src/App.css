@@ -323,7 +323,11 @@ button.success-btn {
 }
 
 .trash-item {
-  /* position: absolute; */
+  transition: transform 0.3s;
+}
+
+.trash-item:hover {
+  transform: scale(1.06);  
 }
 
 /* .trash-item:nth-child(odd) {
@@ -508,7 +512,7 @@ body {
   cursor: url('./pages/imgs/손가락.png') 25 25, auto !important;
 }
 
-.App {
+.AppBG {
   background-image: url('./img/게임전체배경.png');
   background-size: cover;
   background-position: center center;
@@ -540,7 +544,7 @@ body {
 
 /* 화면 너비가 480px 미만일 경우 (일반적으로 모바일 환경을 가리킵니다) */
 @media (max-width: 480px) {
-  .App {
+  .AppBG {
     /* 예: 배경 이미지 위치를 조금 더 상단으로 옮기고 싶을 때 */
     background-position: center center;
   }
@@ -548,7 +552,7 @@ body {
 
 /* 화면 너비가 481px ~ 768px 사이일 경우 (일반적으로 태블릿 환경을 가리킵니다) */
 @media (min-width: 481px) and (max-width: 768px) {
-  .App {
+  .AppBG {
     /* 예: 배경 이미지 위치를 가운데로 조정하고 싶을 때 */
     background-position: center center;
   }
@@ -556,7 +560,7 @@ body {
 
 /* 화면 너비가 769px 이상일 경우 (일반적으로 데스크탑 환경을 가리킵니다) */
 @media (min-width: 769px) {
-  .App {
+  .AppBG {
     /* 예: 배경 이미지 위치를 조금 더 하단으로 옮기고 싶을 때 */
     /* background-position: top center; */
   }
@@ -574,18 +578,50 @@ body {
   display: block;
   width: 340px; 
   height: 340px;
-  margin-left: 2%;
+  margin-left: 6%;
+  margin-top: -1%;
 }
 
 .trashcar-location {
   display: block;
   width: 340px; 
   height: 340px;
-  margin-left: 20%;
+  margin-left: 1%;
 }
 
 .main-character-location {
   display: flex;
   justify-content: center;
+  /* margin-left: -40%; */
   /* align-items: center; */
+}
+
+.game-start-btn {
+  display: block;
+  width: 150px; 
+  height: 150px;
+  margin-left: 2%;
+  margin-right: 5%;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.game-start-btn:hover {
+  transform: scale(1.07);  
+}
+
+.video-container {
+  position: fixed; /* 영상이 화면에 고정되도록 설정 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* 다른 요소들이 영상 위에 오도록 설정 */
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 비디오 비율 유지하면서 꽉 채우기 */
 }

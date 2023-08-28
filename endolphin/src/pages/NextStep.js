@@ -1,3 +1,4 @@
+/* global Kakao */ 
 import React, { useEffect } from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -42,6 +43,22 @@ function NextStep() {
     const audio = new Audio(backgroundMusic);
     const [playAudio, setPlayAudio] = useState(true);
 
+    const shareWithParents = () => {
+        Kakao.Link.sendDefault({
+            objectType: 'feed',
+            content: {
+                title: '나의 분리배출 점수',
+                description: `점수는 ${score}점이에요!`,
+                imageUrl: '게임 결과 이미지 URL', // 예: 게임 결과 스크린샷
+                link: {
+                    webUrl: '게임 웹사이트 URL',
+                    mobileWebUrl: '게임 모바일 웹사이트 URL'
+                }
+            },
+            // ... 필요한 다른 옵션들
+        });
+    }
+
     useEffect(() => {
         if (playAudio) {
             // play() 메서드가 반환하는 Promise를 사용하여 play가 완료된 후 후속 작업을 합니다.
@@ -82,7 +99,7 @@ function NextStep() {
 
         // 추가 쓰레기 아이템들
     ]);                                                                     
-    const bins = [ "폐건전지", "유리전용", "의류수거함", "마대보관통", "형광등쓰레기통"/* 추가 수거함 타입들 */];
+    const bins = [ "general", "폐건전지", "유리전용", "의류수거함", "마대보관통", "형광등쓰레기통"/* 추가 수거함 타입들 */];
     //"general", "paper", "plastic", "can", "비닐전용"                         //, "폐건전지", "유리전용", "의류수거함", "마대보관통", "형광등쓰레기통"
     const handleDrop = (isCorrectBin, item) => {
         const effectSound1 = new Audio(맞게들어감);
@@ -195,7 +212,7 @@ function NextStep() {
                         {/* 이곳에 남은 시간을 표시하려면 해당 값을 상태로 관리하고 출력해야 합니다. */}
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" className='custom-cursor' >엄빠에게 자랑하기</Button>
+                        <Button variant="secondary" className='custom-cursor' onClick={shareWithParents}> 엄빠에게 자랑하기</Button>
                         <Button variant="success" className='custom-cursor' onClick={() => {
                             navigate('/'); // 현재 페이지 새로고침
                         }}>나가기</Button>

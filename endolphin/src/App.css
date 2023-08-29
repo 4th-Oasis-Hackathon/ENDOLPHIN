@@ -288,6 +288,7 @@ button.success-btn {
   align-items: center;
   justify-content: center;
   /* margin: 1%; */
+  margin-left: -2%;
 }
 
 .timer-sec{
@@ -470,6 +471,11 @@ Button.game-btn-2 {
   margin-top: 13%;
 }
 
+.pre-result-modal-design {
+  margin-top: 13%;
+  text-align: center;
+}
+
 .item-page-more {
   display: flex;
   font-weight: 700;
@@ -650,4 +656,14 @@ body {
   justify-content: center;
   align-items: center;
   /* margin-bottom: 10px; */
+}
+
+.sound-control {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: end;
+  float: right;
+  margin-top: -10px;
+  margin-right: 5px;
 }

@@ -466,6 +466,7 @@ Button.game-btn-2 {
 }
 
 .result-modal-design {
+  text-align: center;
   margin-top: 13%;
 }
 
@@ -522,9 +523,10 @@ body {
 
 .ssuk-with {
   display: block;
-  width: 170px; /* 기본 너비 설정. 필요에 따라 조정 가능 */
-  height: 130px; /* 기본 높이 설정. 필요에 따라 조정 가능 */
-  margin-left: 33%; /* 기본적으로 이미지를 조금 오른쪽으로 이동시킵니다. */
+  width: 490px; /* 기본 너비 설정. 필요에 따라 조정 가능 */
+  height: 220px; /* 기본 높이 설정. 필요에 따라 조정 가능 */
+  margin-left: 31%; /* 기본적으로 이미지를 조금 오른쪽으로 이동시킵니다. */
+  margin-top: -4%;
 }
 
 /* 화면 너비가 768px 미만일 경우 */
@@ -571,15 +573,15 @@ body {
   width: 350px; /* 기본 너비 설정. 필요에 따라 조정 가능 */
   height: 250px; /* 기본 높이 설정. 필요에 따라 조정 가능 */
   margin-left: 39%;
-  margin-top: -5%;
+  margin-top: -7%;
 }
 
 .ssuk-location {
   display: block;
-  width: 340px; 
-  height: 340px;
+  width: 350px; 
+  height: 350px;
   margin-left: 6%;
-  margin-top: -1%;
+  margin-top: 3%;
 }
 
 .trashcar-location {
@@ -587,6 +589,7 @@ body {
   width: 340px; 
   height: 340px;
   margin-left: 1%;
+  margin-top: 2%;
 }
 
 .main-character-location {
@@ -624,4 +627,27 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover; /* 비디오 비율 유지하면서 꽉 채우기 */
+}
+
+
+.good-ssuk {
+  width: 260px;
+  height: 240px;
+  display: flex;
+  margin: -55px;
+  /* margin-bottom: 10px; */
+}
+
+.modaal-body-style {
+  display: flex;
+  font-weight: 600;
+  justify-content: center;
+
+}
+
+.modal-score-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-bottom: 10px; */
 }

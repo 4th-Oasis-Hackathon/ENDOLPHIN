@@ -187,7 +187,7 @@ function App() {
               />
             <img 
                 src={게임시작버튼} 
-                className="game-start-btn" 
+                className="game-start-btn"  
                 onClick={() => {navigate('/video')}}
                 onMouseEnter={() => hoverSound.play()}
               />

@@ -21,7 +21,27 @@ import 형광등쓰레기 from './imgs/형광등쓰레기.png';
 import 달걀껍질쓰레기 from './imgs/달걀껍질쓰레기.png'
 import 따봉쑤기 from './imgs/따봉쑤기.png';
 
+import 깨진유리쓰레기 from './imgs/깨진유리쓰레기.png'
+import 유리병쓰레기 from './imgs/유리병쓰레기.png'
+import 종이팩쓰레기 from './imgs/종이팩쓰레기.png'
+import 종이컵쓰레기 from './imgs/종이컵쓰레기.png'
+
+
 function NextStep() {
+
+    const [trashItems, setTrashItems] = useState([
+        { id: 11, type: "폐건전지", name: "폐건전지", image: 폐건전지쓰레기 },
+        { id: 12, type: "의류수거함", name: "의류쓰레기", image: 의류쓰레기 },
+        { id: 13, type: "마대보관통", name: "영농폐기물", image: 영농폐기물 },
+        { id: 14, type: "형광등쓰레기통", name: "형광등쓰레기", image: 형광등쓰레기 },
+        { id: 15, type: "general", name: "달걀껍질쓰레기", image: 달걀껍질쓰레기 },
+        { id: 16, type: "general", name: "깨진유리쓰레기", image: 깨진유리쓰레기 },
+        { id: 17, type: "유리전용", name: "유리병쓰레기", image: 유리병쓰레기 },
+        { id: 18, type: "종이팩전용", name: "종이팩쓰레기", image: 종이팩쓰레기 },
+        { id: 19, type: "종이팩전용", name: "종이컵쓰레기", image: 종이컵쓰레기 },
+    ]);     
+    const bins = [ "general", "폐건전지", "유리전용","종이팩전용", "의류수거함", "마대보관통", "형광등쓰레기통"/* 추가 수거함 타입들 */];
+    //"general", "paper", "plastic", "can", "비닐전용"                         //, "폐건전지", "유리전용", "의류수거함", "마대보관통", "형광등쓰레기통"
     const [score, setScore] = useState(0);
     let navigate = useNavigate();
     const bgmRef = useRef(null);
@@ -35,11 +55,11 @@ function NextStep() {
             content: {
                 title: '쑤기와 함께하는 분리배출',
                 description: `엄마, 아빠 제 점수는 ${score}점이에요!`,
-                //imageUrl: '게임 결과 이미지 URL', // 예: 게임 결과 스크린샷
-                // link: {
-                //     webUrl: '게임 웹사이트 URL',
-                //     mobileWebUrl: '게임 모바일 웹사이트 URL'
-                // }
+                imageUrl: '게임 결과 이미지 URL', // 예: 게임 결과 스크린샷
+                link: {
+                    webUrl: '게임 웹사이트 URL',
+                    mobileWebUrl: '게임 모바일 웹사이트 URL'
+                }
             },
         });
     }
@@ -70,18 +90,8 @@ function NextStep() {
         }
     }, []);
 
-    const [trashItems, setTrashItems] = useState([
-        { id: 7, type: "폐건전지", name: "폐건전지", image: 폐건전지쓰레기 },
-        
-        { id: 16, type: "의류수거함", name: "의류쓰레기", image: 의류쓰레기 },
-        { id: 17, type: "마대보관통", name: "영농폐기물", image: 영농폐기물 },
-        { id: 18, type: "형광등쓰레기통", name: "형광등쓰레기", image: 형광등쓰레기 },
-        { id: 19, type: "general", name: "달걀껍질쓰레기", image: 달걀껍질쓰레기 },
-
-        // 추가 쓰레기 아이템들
-    ]);                                                                     
-    const bins = [ "general", "폐건전지", "유리전용", "의류수거함", "마대보관통", "형광등쓰레기통"/* 추가 수거함 타입들 */];
-    //"general", "paper", "plastic", "can", "비닐전용"                         //, "폐건전지", "유리전용", "의류수거함", "마대보관통", "형광등쓰레기통"
+                                                                    
+    
     const handleDrop = (isCorrectBin, item) => {
         const effectSound1 = new Audio(맞게들어감);
         const effectSound2 = new Audio(잘못넣음);

@@ -18,16 +18,6 @@ import 과자봉지쓰레기 from './imgs/과자봉지쓰레기.png';
 import 병뚜껑쓰레기 from './imgs/병뚜껑쓰레기.png';
 import 비닐봉지쓰레기 from './imgs/비닐봉지쓰레기.png';
 import 스프레이용기쓰레기 from './imgs/스프레이용기쓰레기.png';
-import 폐건전지쓰레기 from './imgs/폐건전지쓰레기.png';
-import 플라스틱병쓰레기 from './imgs/플라스틱병쓰레기.png';
-import 플라스틱빨대쓰레기 from './imgs/플라스틱빨대쓰레기.png';
-import 깨진유리쓰레기 from './imgs/깨진유리쓰레기.png';
-import 종이팩쓰레기 from './imgs/종이팩쓰레기.png';
-import 캔쓰레기 from './imgs/캔쓰레기.png';
-import 종이박스쓰레기 from './imgs/종이박스쓰레기.png';
-import 색깔플라스틱병쓰레기 from './imgs/색깔플라스틱병쓰레기.png';
-import 스티로폼쓰레기 from './imgs/스티로폼쓰레기.png';
-import 유리병쓰레기 from './imgs/유리병쓰레기.png';
 import { Modal, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import 의류쓰레기 from './imgs/의류쓰레기.png';
@@ -47,7 +37,6 @@ function Game() {
 
     useEffect(() => {
         if (playAudio) {
-            // play() 메서드가 반환하는 Promise를 사용하여 play가 완료된 후 후속 작업을 합니다.
             audio.play().then(() => {
                 // 여기에 play가 성공적으로 완료된 후의 코드를 작성할 수 있습니다.
             }).catch(error => {
@@ -61,6 +50,7 @@ function Game() {
 
     useEffect(() => {
         if (bgmRef.current) {
+            bgmRef.current.volume = 0.03; 
             bgmRef.current.play();
 
             // 음악이 끝나면 다시 시작
@@ -73,29 +63,10 @@ function Game() {
 
 
     const [trashItems, setTrashItems] = useState([
-        // { id: 1, type: "plastic", name: "플라스틱", image: plasticImage },
-        // { id: 2, type: "paper", name: "종이", image: paperImage },
         { id: 3, type: "비닐전용", name: "과자봉지", image: 과자봉지쓰레기 },
         { id: 4, type: "plastic", name: "병뚜껑", image: 병뚜껑쓰레기 },
         { id: 5, type: "비닐전용", name: "비닐봉지", image: 비닐봉지쓰레기 },
-        { id: 6, type: "can", name: "스프레이용기", image: 스프레이용기쓰레기 },
-        //{ id: 7, type: "폐건전지", name: "폐건전지", image: 폐건전지쓰레기 },
-        // { id: 8, type: "plastic", name: "플라스틱병", image: 플라스틱병쓰레기 },
-        // { id: 9, type: "plastic", name: "플라스틱빨대", image: 플라스틱빨대쓰레기 },
-        // { id: 10, type: "유리전용", name: "깨진유리쓰레기", image: 깨진유리쓰레기 },
-        // { id: 11, type: "paper", name: "종이팩쓰레기", image: 종이팩쓰레기 },
-        // { id: 12, type: "can", name: "캔쓰레기", image: 캔쓰레기 },
-        // { id: 13, type: "paper", name: "종이박스쓰레기", image: 종이박스쓰레기 },
-        // { id: 14, type: "plastic", name: "색깔플라스틱병쓰레기", image: 색깔플라스틱병쓰레기 },
-        // { id: 15, type: "plastic", name: "스티로폼쓰레기", image: 스티로폼쓰레기 },
-        // { id: 16, type: "유리전용", name: "유리병쓰레기", image: 유리병쓰레기 },
-
-        
-        // { id: 16, type: "의류수거함", name: "의류쓰레기", image: 의류쓰레기 },
-        // { id: 16, type: "마대보관통", name: "영농폐기물", image: 영농폐기물 },
-        // { id: 16, type: "형광등쓰레기통", name: "형광등쓰레기", image: 형광등쓰레기 },
-        // { id: 16, type: "general", name: "달걀껍질쓰레기", image: 달걀껍질쓰레기 },
-        // 추가 쓰레기 아이템들
+        { id: 6, type: "can", name: "스프레이용기", image: 스프레이용기쓰레기 }
     ]);                                                                     
     const bins = ["general", "paper", "plastic", "can", "비닐전용" /* 추가 수거함 타입들 */];
                                                                                 //, "폐건전지", "유리전용", "의류수거함", "마대보관통", "형광등쓰레기통"
@@ -160,6 +131,7 @@ function Game() {
 
     return (
         <>  
+        
             <audio ref={bgmRef} src={backgroundMusic} preload="auto" />
         {/* <div className={`game-design ${isGameActive ? 'custom-cursor' : ''}`}> */}
         <div className='custom-cursor'>
@@ -174,9 +146,7 @@ function Game() {
                 <Timer initialTime={10000} onTimeUp={handleTimeUp} />
                 </div>
             <div className='game-design-item'>
-            {/* {trashItems.map((trash, index) => (
-                <TrashItem key={index} id={trash.id} type={trash.type} name={trash.name} image={trash.image} />
-            ))} */}
+
             {shuffledTrashItems.map((trash, index) => (
             <div className="trash-item-display" >
             <TrashItem key={index} id={trash.id} type={trash.type} name={trash.name} image={trash.image}/>
@@ -196,8 +166,6 @@ function Game() {
             </DndProvider>
         </div>
                 <Modal show={showModal} onHide={handleClose} className='modal-design custom-cursor'>
-                {/* <Modal.Header closeButton onHide={handleClose}>
-                </Modal.Header> */}
                 <Modal.Body>
                 <p>제한 시간이 지났어요! <br/>  </p>
                 </Modal.Body>
@@ -210,7 +178,7 @@ function Game() {
                 </Modal>
 
 
-                <Modal show={showResultModal} onHide={handleCloseResult} className='result-modal-design custom-cursor'>
+                <Modal show={showResultModal} onHide={handleCloseResult} className='pre-result-modal-design custom-cursor'>
                     <Modal.Body>
                         <p>우와 ~ {score}점!! </p>
                         {/* 이곳에 남은 시간을 표시하려면 해당 값을 상태로 관리하고 출력해야함. */}
@@ -223,9 +191,6 @@ function Game() {
                     </Modal.Footer>
                 </Modal>
 
-
-                
-                
         </>
         );
     }

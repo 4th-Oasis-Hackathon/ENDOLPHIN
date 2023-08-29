@@ -1,5 +1,5 @@
 /* global Kakao */ 
-import React, { useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import backgroundMusic from './bgm/Sand Castle - Quincas Moreira.mp3'; 
@@ -24,6 +24,7 @@ import 따봉쑤기 from './imgs/따봉쑤기.png';
 function NextStep() {
     const [score, setScore] = useState(0);
     let navigate = useNavigate();
+    const bgmRef = useRef(null);
 
     const audio = new Audio(backgroundMusic);
     const [playAudio, setPlayAudio] = useState(true);
@@ -32,13 +33,13 @@ function NextStep() {
         Kakao.Link.sendDefault({
             objectType: 'feed',
             content: {
-                title: '나의 분리배출 점수',
-                description: `점수는 ${score}점이에요!`,
-                imageUrl: '게임 결과 이미지 URL', // 예: 게임 결과 스크린샷
-                link: {
-                    webUrl: '게임 웹사이트 URL',
-                    mobileWebUrl: '게임 모바일 웹사이트 URL'
-                }
+                title: '쑤기와 함께하는 분리배출',
+                description: `엄마, 아빠 제 점수는 ${score}점이에요!`,
+                //imageUrl: '게임 결과 이미지 URL', // 예: 게임 결과 스크린샷
+                // link: {
+                //     webUrl: '게임 웹사이트 URL',
+                //     mobileWebUrl: '게임 모바일 웹사이트 URL'
+                // }
             },
         });
     }
@@ -55,6 +56,19 @@ function NextStep() {
             };
         }
     }, [playAudio]);
+
+    useEffect(() => {
+        if (bgmRef.current) {
+            bgmRef.current.volume = 0.03; 
+            bgmRef.current.play();
+
+            // 음악이 끝나면 다시 시작
+            bgmRef.current.addEventListener('ended', () => {
+                bgmRef.current.currentTime = 0;
+                bgmRef.current.play();
+            });
+        }
+    }, []);
 
     const [trashItems, setTrashItems] = useState([
         { id: 7, type: "폐건전지", name: "폐건전지", image: 폐건전지쓰레기 },
@@ -172,7 +186,7 @@ function NextStep() {
                         <p className='modal-score-style'>우와 ~ {score}점!! <br/> 분리배출을 아주 잘 하는걸 ! </p> 
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" className='custom-cursor' onClick={shareWithParents}> 엄빠에게 자랑하기</Button>
+                        <Button variant="secondary" className='custom-cursor' onClick={shareWithParents}> 엄마, 아빠에게 자랑하기</Button>
                         <Button variant="success" className='custom-cursor' onClick={() => {
                             navigate('/'); // 현재 페이지 새로고침
                         }}>나가기</Button>

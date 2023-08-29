@@ -20,12 +20,36 @@ import 비닐봉지쓰레기 from './imgs/비닐봉지쓰레기.png';
 import 스프레이용기쓰레기 from './imgs/스프레이용기쓰레기.png';
 import { Modal, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import 의류쓰레기 from './imgs/의류쓰레기.png';
-import 영농폐기물 from './imgs/영농폐기물.png';
-import 형광등쓰레기 from './imgs/형광등쓰레기.png';
+import 색깔플라스틱병쓰레기 from './imgs/색깔플라스틱병쓰레기.png';
+import 스티로폼쓰레기 from './imgs/스티로폼쓰레기.png';
+import 종이박스쓰레기 from './imgs/종이박스쓰레기.png';
+import 캔쓰레기 from './imgs/캔쓰레기.png';
+import 플라스틱병쓰레기 from './imgs/플라스틱병쓰레기.png';
+import 플라스틱빨대쓰레기 from './imgs/플라스틱빨대쓰레기.png';
+import 폐지쓰레기 from './imgs/폐지쓰레기.png';
+import 빈플라스틱용기쓰레기 from './imgs/빈플라스틱용기쓰레기.png';
+import 고철류쓰레기 from './imgs/고철류쓰레기.png';
 import NextStep from './NextStep';
 
 function Game() {
+
+    const [trashItems, setTrashItems] = useState([
+        { id: 1, type: "비닐전용", name: "과자봉지", image: 과자봉지쓰레기 },
+        { id: 2, type: "plastic", name: "병뚜껑", image: 병뚜껑쓰레기 },
+        { id: 3, type: "비닐전용", name: "비닐봉지", image: 비닐봉지쓰레기 },
+        { id: 4, type: "can", name: "스프레이용기", image: 스프레이용기쓰레기 },
+        { id: 5, type: "plastic", name: "색깔플라스틱병쓰레기", image: 색깔플라스틱병쓰레기 },
+        { id: 6, type: "plastic", name: "스티로폼쓰레기", image: 스티로폼쓰레기 },
+        { id: 7, type: "paper", name: "종이박스쓰레기", image: 종이박스쓰레기 },
+        { id: 8, type: "can", name: "캔쓰레기", image: 캔쓰레기 },
+        { id: 9, type: "plastic", name: "플라스틱병쓰레기", image: 플라스틱병쓰레기 },
+        { id: 10, type: "plastic", name: "플라스틱빨대쓰레기", image: 플라스틱빨대쓰레기 },
+        { id: 11, type: "paper", name: "폐지쓰레기", image: 폐지쓰레기 },
+        { id: 12, type: "plastic", name: "빈플라스틱용기쓰레기", image: 빈플라스틱용기쓰레기 },
+        { id: 13, type: "can", name: "고철류쓰레기", image: 고철류쓰레기 }
+    ]);                                                                     
+    const bins = ["general", "paper", "plastic", "can", "비닐전용" /* 추가 수거함 타입들 */];
+                                                                                //, "폐건전지", "유리전용", "의류수거함", "마대보관통", "형광등쓰레기통"
     const [score, setScore] = useState(0);
     let navigate = useNavigate();
     const bgmRef = useRef(null);
@@ -62,14 +86,7 @@ function Game() {
     }, []);
 
 
-    const [trashItems, setTrashItems] = useState([
-        { id: 3, type: "비닐전용", name: "과자봉지", image: 과자봉지쓰레기 },
-        { id: 4, type: "plastic", name: "병뚜껑", image: 병뚜껑쓰레기 },
-        { id: 5, type: "비닐전용", name: "비닐봉지", image: 비닐봉지쓰레기 },
-        { id: 6, type: "can", name: "스프레이용기", image: 스프레이용기쓰레기 }
-    ]);                                                                     
-    const bins = ["general", "paper", "plastic", "can", "비닐전용" /* 추가 수거함 타입들 */];
-                                                                                //, "폐건전지", "유리전용", "의류수거함", "마대보관통", "형광등쓰레기통"
+    
     const handleDrop = (isCorrectBin, item) => {
         const effectSound1 = new Audio(맞게들어감);
         const effectSound2 = new Audio(잘못넣음);

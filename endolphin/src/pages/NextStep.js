@@ -7,34 +7,19 @@ import 맞게들어감 from './bgm/맞게들어감.mp3';
 import 잘못넣음 from './bgm/잘못넣음.mp3';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import { useDrag } from 'react-dnd';
-import plasticImage from './imgs/TestPet.png';
-import paperImage from './imgs/TestPaper.png';
 import TrashItem from './TrashItem.js';
 import TrashBin from './TrashBin.js';
 import Timer from './Timer.js';
 import ScoreBoard from './ScoreBoard';
 import { useState } from 'react';
-import 과자봉지쓰레기 from './imgs/과자봉지쓰레기.png';
-import 병뚜껑쓰레기 from './imgs/병뚜껑쓰레기.png';
-import 비닐봉지쓰레기 from './imgs/비닐봉지쓰레기.png';
-import 스프레이용기쓰레기 from './imgs/스프레이용기쓰레기.png';
 import 폐건전지쓰레기 from './imgs/폐건전지쓰레기.png';
-import 플라스틱병쓰레기 from './imgs/플라스틱병쓰레기.png';
-import 플라스틱빨대쓰레기 from './imgs/플라스틱빨대쓰레기.png';
-import 깨진유리쓰레기 from './imgs/깨진유리쓰레기.png';
-import 종이팩쓰레기 from './imgs/종이팩쓰레기.png';
-import 캔쓰레기 from './imgs/캔쓰레기.png';
-import 종이박스쓰레기 from './imgs/종이박스쓰레기.png';
-import 색깔플라스틱병쓰레기 from './imgs/색깔플라스틱병쓰레기.png';
-import 스티로폼쓰레기 from './imgs/스티로폼쓰레기.png';
-import 유리병쓰레기 from './imgs/유리병쓰레기.png';
 import { Modal, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import 의류쓰레기 from './imgs/의류쓰레기.png';
 import 영농폐기물 from './imgs/영농폐기물.png';
 import 형광등쓰레기 from './imgs/형광등쓰레기.png';
 import 달걀껍질쓰레기 from './imgs/달걀껍질쓰레기.png'
+import 따봉쑤기 from './imgs/따봉쑤기.png';
 
 function NextStep() {
     const [score, setScore] = useState(0);
@@ -55,13 +40,11 @@ function NextStep() {
                     mobileWebUrl: '게임 모바일 웹사이트 URL'
                 }
             },
-            // ... 필요한 다른 옵션들
         });
     }
 
     useEffect(() => {
         if (playAudio) {
-            // play() 메서드가 반환하는 Promise를 사용하여 play가 완료된 후 후속 작업을 합니다.
             audio.play().then(() => {
                 // 여기에 play가 성공적으로 완료된 후의 코드를 작성할 수 있습니다.
             }).catch(error => {
@@ -74,23 +57,7 @@ function NextStep() {
     }, [playAudio]);
 
     const [trashItems, setTrashItems] = useState([
-        // { id: 1, type: "plastic", name: "플라스틱", image: plasticImage },
-        // { id: 2, type: "paper", name: "종이", image: paperImage },
-        // { id: 3, type: "비닐전용", name: "과자봉지", image: 과자봉지쓰레기 },
-        // { id: 4, type: "plastic", name: "병뚜껑", image: 병뚜껑쓰레기 },
-        // { id: 5, type: "비닐전용", name: "비닐봉지", image: 비닐봉지쓰레기 },
-        // { id: 6, type: "can", name: "스프레이용기", image: 스프레이용기쓰레기 },
         { id: 7, type: "폐건전지", name: "폐건전지", image: 폐건전지쓰레기 },
-        // { id: 8, type: "plastic", name: "플라스틱병", image: 플라스틱병쓰레기 },
-        // { id: 9, type: "plastic", name: "플라스틱빨대", image: 플라스틱빨대쓰레기 },
-        // { id: 10, type: "유리전용", name: "깨진유리쓰레기", image: 깨진유리쓰레기 },
-        // { id: 11, type: "paper", name: "종이팩쓰레기", image: 종이팩쓰레기 },
-        // { id: 12, type: "can", name: "캔쓰레기", image: 캔쓰레기 },
-        // { id: 13, type: "paper", name: "종이박스쓰레기", image: 종이박스쓰레기 },
-        // { id: 14, type: "plastic", name: "색깔플라스틱병쓰레기", image: 색깔플라스틱병쓰레기 },
-        // { id: 15, type: "plastic", name: "스티로폼쓰레기", image: 스티로폼쓰레기 },
-        // { id: 16, type: "유리전용", name: "유리병쓰레기", image: 유리병쓰레기 },
-
         
         { id: 16, type: "의류수거함", name: "의류쓰레기", image: 의류쓰레기 },
         { id: 17, type: "마대보관통", name: "영농폐기물", image: 영농폐기물 },
@@ -170,9 +137,6 @@ function NextStep() {
                 <Timer initialTime={10000} onTimeUp={handleTimeUp} />
                 </div>
             <div className='game-design-item'>
-            {/* {trashItems.map((trash, index) => (
-                <TrashItem key={index} id={trash.id} type={trash.type} name={trash.name} image={trash.image} />
-            ))} */}
             {shuffledTrashItems.map((trash, index) => (
             <div className="trash-item-display" >
             <TrashItem key={index} id={trash.id} type={trash.type} name={trash.name} image={trash.image}/>
@@ -180,9 +144,7 @@ function NextStep() {
             ))}
 
             </div>
-            {/* 필요한 경우 다른 컴포넌트 또는 내용 추가 */}
             <div className='game-design-bin'>
-            {/* <TrashBin type="plastic" onDrop={handleDrop} /> */}
             {bins.map((type, index) => (
                 <div className='game-design-bin2'>
                 <TrashBin key={index} type={type} onDrop={handleDrop} />
@@ -192,8 +154,6 @@ function NextStep() {
             </DndProvider>
         </div>
                 <Modal show={showModal} onHide={handleClose} className='modal-design custom-cursor'>
-                {/* <Modal.Header closeButton onHide={handleClose}>
-                </Modal.Header> */}
                 <Modal.Body>
                 <p>제한 시간이 지났어요! <br/>  </p>
                 </Modal.Body>
@@ -207,9 +167,9 @@ function NextStep() {
 
 
                 <Modal show={showResultModal} onHide={handleCloseResult} className='result-modal-design custom-cursor'>
-                    <Modal.Body>
-                        <p>우와 ~ {score}점!! </p>
-                        {/* 이곳에 남은 시간을 표시하려면 해당 값을 상태로 관리하고 출력해야 합니다. */}
+                    <Modal.Body className="modaal-body-style">
+                    {score >= 3 && <img src={따봉쑤기} className='good-ssuk' />}
+                        <p className='modal-score-style'>우와 ~ {score}점!! <br/> 분리배출을 아주 잘 하는걸 ! </p> 
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" className='custom-cursor' onClick={shareWithParents}> 엄빠에게 자랑하기</Button>
@@ -218,10 +178,6 @@ function NextStep() {
                         }}>나가기</Button>
                     </Modal.Footer>
                 </Modal>
-
-
-                
-                
         </>
         );
     }

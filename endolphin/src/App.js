@@ -3,19 +3,16 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Container, Form, Nav, Navbar, NavDropdown, Offcanvas} from 'react-bootstrap';
 import { Routes, Route, useNavigate, Router } from 'react-router-dom';
-import bg1 from './img/bg1.png';
-import bg2 from './img/bg2.png';
-import bg3 from './img/bg3.png';
 import 쑥 from './img/쑥.png';
+import 최종쑤기 from './img/최종쑤기.png';
 import 쑥5 from './img/쑥5.png';
 import 게임전체배경 from './img/게임전체배경.png';
 import 쑤기와함께하는 from './img/쑤기와함께하는.png';
+import 쑤기랑함께하는 from './img/쑤기랑함께하는.png';
 import 분리배출 from './img/분리배출.png';
 import 쓰레기차 from './img/쓰레기차.png';
+import 최종쓰레기차 from './img/최종쓰레기차.png';
 import 게임시작버튼 from './img/게임시작버튼.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch} from '@fortawesome/free-solid-svg-icons'
-import Campaign from './pages/Campaign';
 import { useState } from 'react';
 import ItemPage from './pages/ItemPage';
 import data from './data';
@@ -24,6 +21,7 @@ import Quiz from './pages/Quiz';
 import GameReady from './pages/GameReady';
 import QuizReady from './pages/QuizReady';
 import NextStep from './pages/NextStep';
+import Campaign from './pages/Campaign';
 import { useLocation } from 'react-router-dom';
 import VideoComponent from './pages/VideoComponent';
 import { useEffect } from 'react';
@@ -97,17 +95,6 @@ useEffect(() => {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  {/* <Nav.Link> <img
-                  src={쑥}
-                  width="30"                    
-                  height="30"                  
-                  className="d-inline-block align-top"/>출석하기</Nav.Link> */}
-                  {/* <Nav.Link onClick={()=>{navigate('/quiz_ready')}}>
-                    <img
-                    src={쑥}
-                    width="30"                    
-                    height="30"                  
-                    className="d-inline-block align-top"/>쑥오퀴즈</Nav.Link> */}
                   <Nav.Link onClick={()=>{navigate('/game_ready')}}>
                   <img
                   src={쑥}
@@ -126,7 +113,7 @@ useEffect(() => {
         <Route path='/' element={<>
         <div className='AppBG'>
           <img 
-              src={쑤기와함께하는} 
+              src={쑤기랑함께하는} 
               className="ssuk-with" 
             />
 
@@ -136,7 +123,7 @@ useEffect(() => {
             />
           <div className='main-character-location'>
             <img 
-                src={쑥} 
+                src={최종쑤기} 
                 className="ssuk-location" 
               />
             <img 
@@ -145,7 +132,7 @@ useEffect(() => {
                 onClick={() => {navigate('/video')}}
               />
             <img 
-                src={쓰레기차} 
+                src={최종쓰레기차} 
                 className="trashcar-location" 
               />
           </div>

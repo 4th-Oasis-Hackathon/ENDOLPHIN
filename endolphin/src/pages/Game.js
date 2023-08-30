@@ -28,6 +28,7 @@ import 폐지쓰레기 from './imgs/폐지쓰레기.png';
 import 빈플라스틱용기쓰레기 from './imgs/빈플라스틱용기쓰레기.png';
 import 고철류쓰레기 from './imgs/고철류쓰레기.png';
 import NextStep from './NextStep';
+import 따봉쑤기 from './imgs/따봉쑤기.png';
 
 function Game() {
 
@@ -117,7 +118,9 @@ function Game() {
     const handleTimeUp = () => {
         console.log('시간이 끝났습니다!');
         // 게임 종료 또는 다른 로직 처리
-        handleShow();
+        if (!showResultModal) {
+            handleShow();
+        }
     };
 
     function shuffle(array) {
@@ -155,7 +158,7 @@ function Game() {
                 <ScoreBoard score={score} />
                 </div>
                 <div className='game-design-timer'>
-                <Timer initialTime={2000} onTimeUp={handleTimeUp} />
+                <Timer initialTime={30} onTimeUp={handleTimeUp} />
                 </div>
             <div className='game-design-item'>
 
@@ -191,8 +194,9 @@ function Game() {
 
 
                 <Modal show={showResultModal} onHide={handleCloseResult} className='pre-result-modal-design custom-cursor'>
-                    <Modal.Body>
-                        <p>우와 ~ {score}점!! </p>
+                    <Modal.Body className="modaal-body-style-step1">
+                        {score >= 2 && <img src={따봉쑤기} className='good-ssuk-step1' />}
+                        <p>우와 ~ 100점!! </p>
                         {/* 이곳에 남은 시간을 표시하려면 해당 값을 상태로 관리하고 출력해야함. */}
                     </Modal.Body>
                     <Modal.Footer>

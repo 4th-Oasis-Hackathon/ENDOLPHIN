@@ -2,7 +2,7 @@
 import React, { useRef, useEffect } from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import backgroundMusic from './bgm/2단계.mp3'; 
+import backgroundMusic from './bgm/Sand Castle - Quincas Moreira.mp3'; 
 import 맞게들어감 from './bgm/맞게들어감.mp3'; 
 import 잘못넣음 from './bgm/잘못넣음.mp3';
 import { DndProvider } from 'react-dnd';
@@ -39,7 +39,7 @@ function NextStep() {
         { id: 18, type: "종이팩전용", name: "종이팩쓰레기", image: 종이팩쓰레기 },
         { id: 19, type: "general", name: "종이컵쓰레기", image: 종이컵쓰레기 },
     ]);     
-    const bins = [ "general", "유리전용","종이팩전용","폐건전지", "의류수거함", "마대보관통", "형광등쓰레기통"/* 추가 수거함 타입들 */];
+    const bins = [ "general", "폐건전지", "유리전용","종이팩전용", "의류수거함", "마대보관통", "형광등쓰레기통"/* 추가 수거함 타입들 */];
     //"general", "paper", "plastic", "can", "비닐전용"                         //, "폐건전지", "유리전용", "의류수거함", "마대보관통", "형광등쓰레기통"
     const [score, setScore] = useState(0);
     let navigate = useNavigate();
@@ -53,10 +53,11 @@ function NextStep() {
             objectType: 'feed',
             content: {
                 title: '쑥이와 함께하는 분리배출',
-                description: `엄마, 아빠 저 분리배출했어요 !`,
+                description: `엄마, 아빠 저 분리배출했어요 ! `+`          https://bunlissuko-searching.netlify.app/`,
+                
                 imageUrl: '게임 결과 이미지 URL', // 예: 게임 결과 스크린샷
                 link: {
-                    webUrl: '게임 웹사이트 URL',
+                    webUrl: 'https://bunlissuko-searching.netlify.app/', // 웹사이트 URL
                     mobileWebUrl: '게임 모바일 웹사이트 URL'
                 }
             },
@@ -124,7 +125,9 @@ function NextStep() {
     const handleTimeUp = () => {
         console.log('시간이 끝났습니다!');
         // 게임 종료 또는 다른 로직 처리
-        handleShow();
+        if (!showResultModal) {
+            handleShow();
+        }
     };
 
     function shuffle(array) {
@@ -157,7 +160,7 @@ function NextStep() {
                 <ScoreBoard score={score} />
                 </div>
                 <div className='game-design-timer'>
-                <Timer initialTime={200} onTimeUp={handleTimeUp} />
+                <Timer initialTime={20} onTimeUp={handleTimeUp} />
                 </div>
             <div className='game-design-item'>
             {shuffledTrashItems.map((trash, index) => (
@@ -192,7 +195,7 @@ function NextStep() {
                 <Modal show={showResultModal} onHide={handleCloseResult} className='result-modal-design custom-cursor'>
                     <Modal.Body className="modaal-body-style">
                     {score >= 3 && <img src={따봉쑤기} className='good-ssuk' />}
-                        <p className='modal-score-style'>우와 ~ {score}점!! <br/> 분리배출을 아주 잘 하는걸 ! </p> 
+                        <p className='modal-score-style'>우와 ~ 100점!! <br/> 분리배출을 아주 잘 하는걸 ! </p> 
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" className='custom-cursor' onClick={shareWithParents}> 엄마, 아빠에게 자랑하기</Button>

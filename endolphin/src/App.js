@@ -46,7 +46,7 @@ function App() {
 
   useEffect(() => {
     if (!Kakao.isInitialized()) {
-        Kakao.init('4f95a61a589756713a94160312f70cca');
+        Kakao.init('a2cb9f15e4727685ac12b5d908d19dd6');
     }
   }, []);
 

@@ -6,7 +6,6 @@ import {Button, Container, Form, Nav, Navbar, NavDropdown, Offcanvas} from 'reac
 import { Routes, Route, useNavigate, Router } from 'react-router-dom';
 import 쑥 from './img/쑥.png';
 import 최종쑤기 from './img/최종쑤기.png';
-import 쑥5 from './img/쑥5.png';
 import 게임전체배경 from './img/게임전체배경.png';
 import 쑤기와함께하는 from './img/쑤기와함께하는.png';
 import 쑤기랑함께하는 from './img/쑤기랑함께하는.png';
@@ -18,11 +17,7 @@ import { useState } from 'react';
 import ItemPage from './pages/ItemPage';
 import data from './data';
 import Game from './pages/Game';
-import Quiz from './pages/Quiz';
-import GameReady from './pages/GameReady';
-import QuizReady from './pages/QuizReady';
 import NextStep from './pages/NextStep';
-import Campaign from './pages/Campaign';
 import { useLocation } from 'react-router-dom';
 import VideoComponent from './pages/VideoComponent';
 import { useEffect } from 'react';
@@ -133,31 +128,6 @@ function App() {
                 height="40"                  
                 className="d-inline-block align-top logo-img"/>
               </Navbar.Brand>
-            {/* <Navbar.Brand>Bully's Go</Navbar.Brand> */}
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
-            <Navbar.Offcanvas
-              id={`offcanvasNavbar-expand-${expand}`}
-              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-              placement="end"
-            >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title className="title-location custom-cursor" id={`offcanvasNavbarLabel-expand-${expand}`}
-                // style={{fontWeight: 'bold', textAlign: 'right', cursor: 'pointer'}}
-                onClick={()=>{navigate('/')}}
-                > 분리<span className="highlight">쑥</span>오
-                </Offcanvas.Title>
-              </Offcanvas.Header>
-              <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link onClick={()=>{navigate('/game_ready')}}>
-                  <img
-                  src={쑥}
-                  width="30"                    
-                  height="30"                  
-                  className="d-inline-block align-top"/>쑥오게임</Nav.Link>
-                </Nav>
-              </Offcanvas.Body>
-            </Navbar.Offcanvas>
           </Container>
         </Navbar>
       ))}
@@ -200,9 +170,7 @@ function App() {
         </>}/>
 
         {/* URL 파라미터 */}
-        {/* <Route path='/paper' element={<PaperPage/>}/> */}
         <Route path='/item/:id' element={<><ItemPage/></>}/>
-        <Route path='/Campaign' element={<Campaign/>}/>
         <Route path='/video' element={<VideoComponent/>}/>
         <Route path='/game' element={<>
           <div onClick={() => setPlayAudio(!playAudio)}>
@@ -214,9 +182,6 @@ function App() {
               <img src={playAudio ? 진짜음소거해제 : 진짜음소거} className='sound-control' />
           </div>
         <NextStep/></>}/>
-        <Route path='/quiz' element={<Quiz/>}/>
-        <Route path='/game_ready' element={<GameReady/>}/>
-        <Route path='/quiz_ready' element={<QuizReady/>}/>
         <Route path='*' element={<>404</>}/>
       </Routes>
       </div>

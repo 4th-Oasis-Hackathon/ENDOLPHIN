@@ -258,10 +258,15 @@ button.success-btn {
 }
 
 .trash-bin img{
-  width: 220px;
-  height: 220px;
-  margin: 3px; 
+  width: 193px;
+  height: 193px;
+  margin: 1px; 
   /* flex-direction: column; */
+}
+
+.trash-bin {
+  /* margin: -10px; */
+  padding: 10px;
 }
 
 .trash-bin-bg {
@@ -279,7 +284,7 @@ button.success-btn {
 .game-design {
   /* margin: 1%; */
   /* background-color: rgb(222, 244, 219); */
-  
+
 }
 
 
@@ -344,7 +349,7 @@ button.success-btn {
   justify-content: center; /* 가운데 정렬 */
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 3%;
+  padding: 2%;
   /* max-width: 800px;  */
   /* width: 100%; */
   /* margin-buttom: -10%; */
@@ -584,18 +589,19 @@ body {
 
 .ssuk-location {
   display: block;
-  width: 350px; 
-  height: 350px;
+  width: 410px; 
+  height: 410px;
   margin-left: 6%;
-  margin-top: 3%;
+  /* margin-top: 3%; */
+  margin-bottom: 4%;
 }
 
 .trashcar-location {
   display: block;
-  width: 340px; 
-  height: 340px;
+  width: 370px; 
+  height: 370px;
   margin-left: 1%;
-  margin-top: 2%;
+  margin-top: 1%;
 }
 
 .main-character-location {
@@ -609,7 +615,7 @@ body {
   display: block;
   width: 150px; 
   height: 150px;
-  margin-left: 2%;
+  margin-left: 0%;
   margin-right: 5%;
   border-radius: 50%;
   transition: transform 0.3s;

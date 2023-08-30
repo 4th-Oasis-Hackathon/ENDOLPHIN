@@ -7,8 +7,6 @@ import 잘못넣음 from './bgm/잘못넣음.mp3';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { useDrag } from 'react-dnd';
-import plasticImage from './imgs/TestPet.png';
-import paperImage from './imgs/TestPaper.png';
 import TrashItem from './TrashItem.js';
 import TrashBin from './TrashBin.js';
 import Timer from './Timer.js';
@@ -43,7 +41,7 @@ function Game() {
         { id: 7, type: "paper", name: "종이박스쓰레기", image: 종이박스쓰레기 },
         { id: 8, type: "can", name: "캔쓰레기", image: 캔쓰레기 },
         { id: 9, type: "plastic", name: "플라스틱병쓰레기", image: 플라스틱병쓰레기 },
-        { id: 10, type: "plastic", name: "플라스틱빨대쓰레기", image: 플라스틱빨대쓰레기 },
+        { id: 10, type: "general", name: "플라스틱빨대쓰레기", image: 플라스틱빨대쓰레기 },
         { id: 11, type: "paper", name: "폐지쓰레기", image: 폐지쓰레기 },
         { id: 12, type: "plastic", name: "빈플라스틱용기쓰레기", image: 빈플라스틱용기쓰레기 },
         { id: 13, type: "can", name: "고철류쓰레기", image: 고철류쓰레기 }
@@ -62,7 +60,6 @@ function Game() {
     useEffect(() => {
         if (playAudio) {
             audio.play().then(() => {
-                // 여기에 play가 성공적으로 완료된 후의 코드를 작성할 수 있습니다.
             }).catch(error => {
                 console.error("오디오 재생 오류:", error);
             });
@@ -150,9 +147,7 @@ function Game() {
         <>  
         
             <audio ref={bgmRef} src={backgroundMusic} preload="auto" />
-        {/* <div className={`game-design ${isGameActive ? 'custom-cursor' : ''}`}> */}
         <div className='custom-cursor'>
-        {/* <div className={isGameActive ? 'custom-cursor' : ''}> */}
         
             <DndProvider backend={HTML5Backend}>
             {/* TrashItem 컴포넌트를 렌더링 */}
@@ -160,7 +155,7 @@ function Game() {
                 <ScoreBoard score={score} />
                 </div>
                 <div className='game-design-timer'>
-                <Timer initialTime={10000} onTimeUp={handleTimeUp} />
+                <Timer initialTime={2000} onTimeUp={handleTimeUp} />
                 </div>
             <div className='game-design-item'>
 
@@ -187,7 +182,7 @@ function Game() {
                 <p>제한 시간이 지났어요! <br/>  </p>
                 </Modal.Body>
                 <Modal.Footer>
-                <Button variant="secondary" className="modal-cursor custom-cursor" onClick={()=>{navigate('/')}}>결과 보기</Button>
+                {/* <Button variant="secondary" className="modal-cursor custom-cursor" onClick={()=>{navigate('/')}}>결과 보기</Button> */}
                 <Button variant="success" className="modal-cursorcustom-cursor" onClick={() => {
                     window.location.reload(); // 현재 페이지 새로고침
                 }}>다시하기</Button>

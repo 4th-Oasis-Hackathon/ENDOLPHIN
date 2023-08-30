@@ -27,49 +27,49 @@ import 진짜음소거해제 from './img/진짜음소거해제.png';
 import 게임재생버튼 from './pages/bgm/게임재생버튼.mp3';
 
 function App() {
-  
-  let navigate = useNavigate();
-  const location = useLocation();
 
-  const [inputValue, setInputValue] = useState(''); // 입력 값을 관리하는 state
-  const [searchText, setSearchText] = useState('');
+    let navigate = useNavigate();
+    const location = useLocation();
 
-  const [playAudio, setPlayAudio] = useState(true);
-  const bgmRef = useRef(null);
+    const [inputValue, setInputValue] = useState(''); // 입력 값을 관리하는 state
+    const [searchText, setSearchText] = useState('');
+
+    const [playAudio, setPlayAudio] = useState(true);
+    const bgmRef = useRef(null);
 
 
 
-  useEffect(() => {
+    useEffect(() => {
     if (!Kakao.isInitialized()) {
         Kakao.init('a2cb9f15e4727685ac12b5d908d19dd6');
     }
-  }, []);
+    }, []);
 
-// Audio object 초기화
-  const [audio] = useState(new Audio(메인화면bgm));
+    // Audio object 초기화
+    const [audio] = useState(new Audio(메인화면bgm));
 
-  useEffect(() => {
+    useEffect(() => {
     // 만약 현재 페이지의 URL이 메인 화면이면 배경음악 재생
     if (location.pathname === "/") {
-      if (playAudio) {
+        if (playAudio) {
         audio.play().then(() => {
         }).catch(error => {
-          console.error("오디오 재생 오류:", error);
+            console.error("오디오 재생 오류:", error);
         });
-      } else {
+        } else {
         audio.pause();
-      }
+        }
 
-      // 컴포넌트 unmount시 실행되는 클린업 함수
-      return () => {
+        // 컴포넌트 unmount시 실행되는 클린업 함수
+        return () => {
         audio.pause();
-      };
+        };
     } else {
-      audio.pause(); // 메인 화면이 아니면 배경 음악 중지
+        audio.pause(); // 메인 화면이 아니면 배경 음악 중지
     }
-  }, [playAudio, audio, location.pathname]);
+    }, [playAudio, audio, location.pathname]);
 
-  useEffect(() => {
+    useEffect(() => {
     if (bgmRef.current) {
         bgmRef.current.volume = 0.03; 
         bgmRef.current.play();
@@ -78,115 +78,115 @@ function App() {
             bgmRef.current.play();
         });
     }
-}, []);
+    }, []);
 
-  const handleSearchFormSubmit = (e) => {
+    const handleSearchFormSubmit = (e) => {
     e.preventDefault(); // 기본 폼 제출 동작 막기
     handleSearch(searchText); // 검색 처리
-  };
+    };
 
-  const handleSearch = (searchText) => {
+    const handleSearch = (searchText) => {
     if (!searchText.trim()) {
-      navigate('*');
-      return;
+        navigate('*');
+        return;
     }
 
     const result = data.find(item => item.name.includes(searchText));
     if (result) {
-      // 이동할 페이지 설정 (예: '/paper')
-      navigate(`/item/${result.id}`);
+        // 이동할 페이지 설정 (예: '/paper')
+        navigate(`/item/${result.id}`);
     } else {
-      navigate('*');
+        navigate('*');
     }
 
-  };
+    };
 
-  const [volume, setVolume] = useState(1); // 초기 볼륨을 100%로 설정
+    const [volume, setVolume] = useState(1); // 초기 볼륨을 100%로 설정
 
-  const handleVolumeChange = (e) => {
+    const handleVolumeChange = (e) => {
     const newVolume = e.target.value;
     setVolume(newVolume);
     if (bgmRef.current) {
         bgmRef.current.volume = newVolume;
     }
-}
-  const [hoverSound] = useState(new Audio(게임재생버튼));
+    }
+    const [hoverSound] = useState(new Audio(게임재생버튼));
 
-  
 
-  return (
+
+    return (
     <>
     <div className='custom-cursor' >
-      {['md'].map((expand) => (
+        {['md'].map((expand) => (
         <Navbar expand={false} className="bg-body-tertiary mb-3 custom-cursor">
-          <Container fluid>
+            <Container fluid>
             <Navbar.Brand className="title-location custom-cursor" onClick={()=>{ navigate('/') }}>
-              분리<span className="highlight custom-cursor">쑥</span>오
-              <img 
+                분리<span className="highlight custom-cursor">쑥</span>오
+                <img 
                 src={쑥}
                 width="40"                    
                 height="40"                  
                 className="d-inline-block align-top logo-img"/>
-              </Navbar.Brand>
-          </Container>
+                </Navbar.Brand>
+            </Container>
         </Navbar>
-      ))}
+        ))}
 
-      <Routes>
+        <Routes>
         
         <Route path='/' element={<>
-          <div onClick={() => setPlayAudio(!playAudio)}>
-              <img src={playAudio ? 진짜음소거해제 : 진짜음소거} className='sound-control' />
-          </div>
+            <div onClick={() => setPlayAudio(!playAudio)}>
+                <img src={playAudio ? 진짜음소거해제 : 진짜음소거} className='sound-control' />
+            </div>
 
 
         <div className='AppBG'>
-          <img 
-              src={쑤기랑함께하는} 
-              className="ssuk-with" 
+            <img 
+                src={쑤기랑함께하는} 
+                className="ssuk-with" 
             />
 
-          <img 
-              src={분리배출} 
-              className="bunli-location" 
+            <img 
+                src={분리배출} 
+                className="bunli-location" 
             />
-          <div className='main-character-location'>
+            <div className='main-character-location'>
             <img 
                 src={최종쑤기} 
                 className="ssuk-location" 
-              />
+                />
             <img 
                 src={게임시작버튼} 
                 className="game-start-btn"  
                 onClick={() => {navigate('/video')}}
                 onMouseEnter={() => hoverSound.play()}
-              />
+                />
             <img 
                 src={최종쓰레기차} 
                 className="trashcar-location" 
-              />
-          </div>
-          </div>
+                />
+            </div>
+            </div>
         </>}/>
 
         {/* URL 파라미터 */}
         <Route path='/item/:id' element={<><ItemPage/></>}/>
         <Route path='/video' element={<VideoComponent/>}/>
         <Route path='/game' element={<>
-          <div onClick={() => setPlayAudio(!playAudio)}>
-              <img src={playAudio ? 진짜음소거해제 : 진짜음소거} className='sound-control' />
-          </div>
+            <div onClick={() => setPlayAudio(!playAudio)}>
+                <img src={playAudio ? 진짜음소거해제 : 진짜음소거} className='sound-control' />
+            </div>
         <Game/></>}/>
         <Route path='/game_step2' element={<>
-          <div onClick={() => setPlayAudio(!playAudio)}>
-              <img src={playAudio ? 진짜음소거해제 : 진짜음소거} className='sound-control' />
-          </div>
+            <div onClick={() => setPlayAudio(!playAudio)}>
+                <img src={playAudio ? 진짜음소거해제 : 진짜음소거} className='sound-control' />
+            </div>
         <NextStep/></>}/>
         <Route path='*' element={<>404</>}/>
-      </Routes>
-      </div>
+        </Routes>
+        </div>
     </>
-  );
+    );
 }
 
 export default App;

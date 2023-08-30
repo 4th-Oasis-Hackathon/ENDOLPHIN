@@ -2,7 +2,7 @@
 import React, { useRef, useEffect } from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import backgroundMusic from './bgm/Sand Castle - Quincas Moreira.mp3'; 
+import backgroundMusic from './bgm/2단계.mp3'; 
 import 맞게들어감 from './bgm/맞게들어감.mp3'; 
 import 잘못넣음 from './bgm/잘못넣음.mp3';
 import { DndProvider } from 'react-dnd';
@@ -20,7 +20,6 @@ import 영농폐기물 from './imgs/영농폐기물.png';
 import 형광등쓰레기 from './imgs/형광등쓰레기.png';
 import 달걀껍질쓰레기 from './imgs/달걀껍질쓰레기.png'
 import 따봉쑤기 from './imgs/따봉쑤기.png';
-
 import 깨진유리쓰레기 from './imgs/깨진유리쓰레기.png'
 import 유리병쓰레기 from './imgs/유리병쓰레기.png'
 import 종이팩쓰레기 from './imgs/종이팩쓰레기.png'
@@ -38,9 +37,9 @@ function NextStep() {
         { id: 16, type: "general", name: "깨진유리쓰레기", image: 깨진유리쓰레기 },
         { id: 17, type: "유리전용", name: "유리병쓰레기", image: 유리병쓰레기 },
         { id: 18, type: "종이팩전용", name: "종이팩쓰레기", image: 종이팩쓰레기 },
-        { id: 19, type: "종이팩전용", name: "종이컵쓰레기", image: 종이컵쓰레기 },
+        { id: 19, type: "general", name: "종이컵쓰레기", image: 종이컵쓰레기 },
     ]);     
-    const bins = [ "general", "폐건전지", "유리전용","종이팩전용", "의류수거함", "마대보관통", "형광등쓰레기통"/* 추가 수거함 타입들 */];
+    const bins = [ "general", "유리전용","종이팩전용","폐건전지", "의류수거함", "마대보관통", "형광등쓰레기통"/* 추가 수거함 타입들 */];
     //"general", "paper", "plastic", "can", "비닐전용"                         //, "폐건전지", "유리전용", "의류수거함", "마대보관통", "형광등쓰레기통"
     const [score, setScore] = useState(0);
     let navigate = useNavigate();
@@ -53,8 +52,8 @@ function NextStep() {
         Kakao.Link.sendDefault({
             objectType: 'feed',
             content: {
-                title: '쑤기와 함께하는 분리배출',
-                description: `엄마, 아빠 제 점수는 ${score}점이에요!`,
+                title: '쑥이와 함께하는 분리배출',
+                description: `엄마, 아빠 저 분리배출했어요 !`,
                 imageUrl: '게임 결과 이미지 URL', // 예: 게임 결과 스크린샷
                 link: {
                     webUrl: '게임 웹사이트 URL',
@@ -158,7 +157,7 @@ function NextStep() {
                 <ScoreBoard score={score} />
                 </div>
                 <div className='game-design-timer'>
-                <Timer initialTime={10000} onTimeUp={handleTimeUp} />
+                <Timer initialTime={200} onTimeUp={handleTimeUp} />
                 </div>
             <div className='game-design-item'>
             {shuffledTrashItems.map((trash, index) => (

@@ -67,12 +67,6 @@
 $ git clone git@github.com:4th-Oasis-Hackathon/ENDOLPHIN.git
 ```
 
-## 프로젝트 사용법 (Getting Started)
-**사이트 주소**
-
-
-[https://bunlissuko.netlify.app/]
-
 
 ## 시연 영상
 

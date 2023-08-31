@@ -73,6 +73,13 @@ $ git clone git@github.com:4th-Oasis-Hackathon/ENDOLPHIN.git
 
 [https://bunlissuko.netlify.app/]
 
+
+## 시연 영상
+
+
+![Uploading gif시연영상.gif…]()
+
+
  
 ## 팀 정보 (Team Information)
  `기획`  김세희 (sehee4759@naver.com), Github Id: sehee2i  

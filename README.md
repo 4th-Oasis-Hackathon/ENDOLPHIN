@@ -62,10 +62,7 @@
 
 ![Figma](https://cdn.discordapp.com/attachments/1140269063218679882/1146455210886189066/image.png)
 
-## 설치 안내 (Installation Process)
-```bash
-$ git clone git@github.com:4th-Oasis-Hackathon/ENDOLPHIN.git
-```
+
 
 
 ## 시연 영상

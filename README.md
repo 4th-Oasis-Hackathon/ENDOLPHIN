@@ -76,7 +76,6 @@ $ git clone git@github.com:4th-Oasis-Hackathon/ENDOLPHIN.git
 
 ## 시연 영상
 
-
 ![Uploading gif시연영상.gif…]()
 
 

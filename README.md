@@ -13,8 +13,8 @@
 
 
 ## 기능 설명
-<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/a155ae6a-ef48-40b4-a62f-66ee011e4a26" width="200" height="400"/>
-![image](https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/a155ae6a-ef48-40b4-a62f-66ee011e4a26)
+<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/a155ae6a-ef48-40b4-a62f-66ee011e4a26" width="500" height="500"/>
+
 
 1. 게임 시작 버튼: 게임의 시작을 알리고 진행하는 기능
 1. 로딩 애니메이션: 로딩 중 사용자가 이목을 끌어 지루하지 않게 영상을 출력하는 기능

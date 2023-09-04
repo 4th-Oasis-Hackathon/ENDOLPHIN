@@ -29,10 +29,10 @@
 - 쓰레기 드레그하기: 게임 내에서 쓰레기를 움직여 올바르게 재활용하도록 하는 기능
 
 
-<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/edda79ab-dd6e-408d-ad50-ad21ad4deb9b" width="500" height="210"/>
+<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/edda79ab-dd6e-408d-ad50-ad21ad4deb9b" width="500" height="230"/>
 
 
-<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/c0dab871-88db-4bef-86be-455899e33fa0" width="500" height="210"/>
+<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/c0dab871-88db-4bef-86be-455899e33fa0" width="500" height="230"/>
 
 
 

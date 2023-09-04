@@ -46,10 +46,11 @@
 - 엄마, 아빠에게 자랑하기: 카카오톡이라는 SNS와 연동되는 알림 서비스 기능이며, 이 기능의 의미대로 사용자인 아이가 게임한 결과를 부모님에게 알려주면서 자랑해주는 독보적인 기능
 
 
-<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/839ca46e-f763-4623-91fa-8f8e83d1f4f0" width="510" height="180"/>
+<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/a64f1d6e-f3c7-4595-8710-e7f2eedf2393" width="500" height="230"/>
 
 
-<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/c8925852-4454-4f0e-8201-f4290e30ab0c" width="520" height="180"/>
+<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/220bbeb6-b65a-4f06-94d4-8aad7084accb" width="500" height="230"/>
+
 
 
 - 웹사이트 연동: 우리 팀에서 직접 만든 재활용품과 분리수거에 대한 올바른 지식을 알려주는 웹사이트와, 유아용 게임에 집중되어 있는 웹사이트가 서로 연결되는 기능 (위 카카오톡과 연동되는 기능 버튼 아래에, 추가로 이 기능의 버튼이 존재)
@@ -106,12 +107,3 @@
 
 
 
-
-
- 
-## 팀 정보 (Team Information)
- `기획`  김세희 (sehee4759@naver.com), Github Id: sehee2i  
- `개발1`  서준호 (jijo0718@gmail.com), Github Id: DDunos  
- `개발2`  최윤영 (yunyoung0531@naver.com), Github Id: yunyoung0531  
- `디자인1`  김수민 (froze0106001@naver.com), Github Id: froze0106001  
- `디자인2`  박서연 (parkseoyeon05@naver.com), Github Id: Iwanttofinishthisstage  

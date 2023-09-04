@@ -13,16 +13,23 @@
 
 
 ## 기능 설명
-<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/a155ae6a-ef48-40b4-a62f-66ee011e4a26" width="600" height="250"/>
+<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/a155ae6a-ef48-40b4-a62f-66ee011e4a26" width="550" height="250"/>
 
 
 1. 게임 시작 버튼: 게임의 시작을 알리고 진행하는 기능
 
-<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/00e21dd8-e8f6-403f-ac9a-57181b7d967c" width="600" height="250"/>
-![image](https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/00e21dd8-e8f6-403f-ac9a-57181b7d967c)
+<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/00e21dd8-e8f6-403f-ac9a-57181b7d967c" width="550" height="250"/>
+
 
 1. 로딩 애니메이션: 로딩 중 사용자가 이목을 끌어 지루하지 않게 영상을 출력하는 기능
+
+<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/5094abfb-0371-46ba-9273-997db3d8a69d" width="550" height="250"/>
+
+
 1. 쓰레기 드레그하기: 게임 내에서 쓰레기를 움직여 올바르게 재활용하도록 하는 기능
+
+
+
 1. 다음 단계로 넘어가기: 1단계에서 2단계로 넘어가는 단편적인 기능
 1. 나가기: 게임을 종료하고 싶을 때 나갈 수 있게 하는 기능
 1. 엄마, 아빠에게 자랑하기: 카카오톡이라는 SNS와 연동되는 알림 서비스 기능이며, 이 기능의 의미대로 사용자인 아이가 게임한 결과를 부모님에게 알려주면서 자랑해주는 독보적인 기능

@@ -29,10 +29,10 @@
 - 쓰레기 드레그하기: 게임 내에서 쓰레기를 움직여 올바르게 재활용하도록 하는 기능
 
 
-<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/edda79ab-dd6e-408d-ad50-ad21ad4deb9b" width="500" height="250"/>
+<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/edda79ab-dd6e-408d-ad50-ad21ad4deb9b" width="490" height="250"/>
 
 
-<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/c0dab871-88db-4bef-86be-455899e33fa0" width="500" height="250"/>
+<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/c0dab871-88db-4bef-86be-455899e33fa0" width="490" height="250"/>
 
 
 
@@ -46,10 +46,10 @@
 - 엄마, 아빠에게 자랑하기: 카카오톡이라는 SNS와 연동되는 알림 서비스 기능이며, 이 기능의 의미대로 사용자인 아이가 게임한 결과를 부모님에게 알려주면서 자랑해주는 독보적인 기능
 
 
-<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/a64f1d6e-f3c7-4595-8710-e7f2eedf2393" width="500" height="230"/>
+<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/a64f1d6e-f3c7-4595-8710-e7f2eedf2393" width="490" height="230"/>
 
 
-<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/220bbeb6-b65a-4f06-94d4-8aad7084accb" width="500" height="230"/>
+<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/220bbeb6-b65a-4f06-94d4-8aad7084accb" width="490" height="230"/>
 
 
 

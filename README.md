@@ -13,10 +13,14 @@
 
 
 ## 기능 설명
-<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/a155ae6a-ef48-40b4-a62f-66ee011e4a26" width="600" height="400"/>
+<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/a155ae6a-ef48-40b4-a62f-66ee011e4a26" width="600" height="250"/>
 
 
 1. 게임 시작 버튼: 게임의 시작을 알리고 진행하는 기능
+
+<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/00e21dd8-e8f6-403f-ac9a-57181b7d967c" width="600" height="250"/>
+![image](https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/00e21dd8-e8f6-403f-ac9a-57181b7d967c)
+
 1. 로딩 애니메이션: 로딩 중 사용자가 이목을 끌어 지루하지 않게 영상을 출력하는 기능
 1. 쓰레기 드레그하기: 게임 내에서 쓰레기를 움직여 올바르게 재활용하도록 하는 기능
 1. 다음 단계로 넘어가기: 1단계에서 2단계로 넘어가는 단편적인 기능

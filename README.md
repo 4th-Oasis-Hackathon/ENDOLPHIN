@@ -101,7 +101,7 @@
 
 ## 시연 영상
 
-
+https://youtu.be/mz_5JOibQkw
 
 ![gif시연영상](https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/d3398a39-35e5-4648-8bd5-7c98a84f1a97)
 

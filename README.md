@@ -98,6 +98,16 @@
 
 
 
+## 페이지 주소
+
+
+(분리배출 게임) - https://bunlissuko.netlify.app/ 
+(분리배출 검색) - https://bunlissuko-searching.netlify.app/ 
+
+
+
+(배포 후 뒤로가기 또는 새로고침 오류가 생겼습니다😭 추후 수정 예정)
+
 
 ## 시연 영상
 

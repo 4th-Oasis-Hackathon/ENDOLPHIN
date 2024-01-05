@@ -101,8 +101,11 @@
 ## 페이지 주소
 
 
-(분리배출 게임) - https://bunlissuko.netlify.app/ 
-(분리배출 검색) - https://bunlissuko-searching.netlify.app/ 
+[분리배출 게임] - https://bunlissuko.netlify.app/ 
+
+
+
+[분리배출 검색] - https://bunlissuko-searching.netlify.app/ 
 
 
 

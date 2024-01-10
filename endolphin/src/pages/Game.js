@@ -158,7 +158,7 @@ function Game() {
                 <ScoreBoard score={score} />
                 </div>
                 <div className='game-design-timer'>
-                <Timer initialTime={30} onTimeUp={handleTimeUp} />
+                <Timer initialTime={35} onTimeUp={handleTimeUp} />
                 </div>
             <div className='game-design-item'>
 

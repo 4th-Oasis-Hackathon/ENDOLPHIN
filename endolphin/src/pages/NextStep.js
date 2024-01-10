@@ -92,7 +92,7 @@ function NextStep() {
 
                                                                     
     
-    const handleDrop = (isCorrectBin, item) => {
+    const handleDrop = (isCorrectBin, item) => {    
         const effectSound1 = new Audio(맞게들어감);
         const effectSound2 = new Audio(잘못넣음);
 
@@ -160,7 +160,7 @@ function NextStep() {
                 <ScoreBoard score={score} />
                 </div>
                 <div className='game-design-timer'>
-                <Timer initialTime={20} onTimeUp={handleTimeUp} />
+                <Timer initialTime={30} onTimeUp={handleTimeUp} />
                 </div>
             <div className='game-design-item'>
             {shuffledTrashItems.map((trash, index) => (

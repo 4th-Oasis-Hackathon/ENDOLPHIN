@@ -32,12 +32,14 @@
 <img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/edda79ab-dd6e-408d-ad50-ad21ad4deb9b" width="490" height="250"/>
 
 
+- 다음 단계로 넘어가기: 1단계에서 2단계로 넘어가는 단편적인 기능
+- 나가기: 게임을 종료하고 싶을 때 나갈 수 있게 하는 기능
+
+  
+
 <img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/c0dab871-88db-4bef-86be-455899e33fa0" width="490" height="250"/>
 
 
-
-- 다음 단계로 넘어가기: 1단계에서 2단계로 넘어가는 단편적인 기능
-- 나가기: 게임을 종료하고 싶을 때 나갈 수 있게 하는 기능
 
 
 <img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/0c70a605-5632-4093-81c5-9c1a6139b514" width="510" height="220"/>

@@ -143,7 +143,7 @@ function Game() {
         }
     }, [trashItems]);
 
-    const [isGameActive, setIsGameActive] = useState(true);
+    // const [isGameActive, setIsGameActive] = useState(true); ???
 
 
     return (
@@ -169,7 +169,7 @@ function Game() {
             ))}
 
             </div>
-            {/* 필요한 경우 다른 컴포넌트 또는 내용 추가 */}
+            
             <div className='game-design-bin custom-cursor'>
             {/* <TrashBin type="plastic" onDrop={handleDrop} /> */}
             {bins.map((type, index) => (
@@ -189,6 +189,9 @@ function Game() {
                 <Button variant="success" className="modal-cursorcustom-cursor" onClick={() => {
                     window.location.reload(); // 현재 페이지 새로고침
                 }}>다시하기</Button>
+                <Button variant="secondary" className='custom-cursor' onClick={() => {
+                            navigate('/'); 
+                }}>나가기</Button>
                 </Modal.Footer>
                 </Modal>
 
@@ -197,7 +200,6 @@ function Game() {
                     <Modal.Body className="modaal-body-style-step1">
                         {score >= 2 && <img src={따봉쑤기} className='good-ssuk-step1' />}
                         <p>우와 ~ 100점!! </p>
-                        {/* 이곳에 남은 시간을 표시하려면 해당 값을 상태로 관리하고 출력해야함. */}
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" className="modal-cursor custom-cursor" onClick={()=>{navigate('/game_step2')}} >다음 단계</Button>

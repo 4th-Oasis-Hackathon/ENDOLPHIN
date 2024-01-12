@@ -1,5 +1,5 @@
 /* global Kakao */ 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import backgroundMusic from './bgm/Sand Castle - Quincas Moreira.mp3'; 
@@ -11,7 +11,6 @@ import TrashItem from './TrashItem.js';
 import TrashBin from './TrashBin.js';
 import Timer from './Timer.js';
 import ScoreBoard from './ScoreBoard';
-import { useState } from 'react';
 import 폐건전지쓰레기 from './imgs/폐건전지쓰레기.png';
 import { Modal, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -58,7 +57,7 @@ function NextStep() {
                 imageUrl: '게임 결과 이미지 URL', // 예: 게임 결과 스크린샷
                 link: {
                     webUrl: 'https://bunlissuko-searching.netlify.app/', // 웹사이트 URL
-                    mobileWebUrl: '게임 모바일 웹사이트 URL'
+                    mobileWebUrl: '게임 모바일 웹사이트 URL' //??
                 }
             },
         });
@@ -90,7 +89,7 @@ function NextStep() {
         }
     }, []);
 
-                                                                    
+
     
     const handleDrop = (isCorrectBin, item) => {    
         const effectSound1 = new Audio(맞게들어감);
@@ -184,10 +183,13 @@ function NextStep() {
                 <p>제한 시간이 지났어요! <br/>  </p>
                 </Modal.Body>
                 <Modal.Footer>
-                <Button variant="secondary"className='custom-cursor' onClick={handleShowResult}>결과 보기</Button>
+                {/* <Button variant="secondary"className='custom-cursor' onClick={handleShowResult}>결과 보기/</Button> */}
                 <Button variant="success" className='custom-cursor' onClick={() => {
                     window.location.reload(); // 현재 페이지 새로고침
                 }}>다시하기</Button>
+                <Button variant="secondary" className='custom-cursor' onClick={() => {
+                            navigate('/'); 
+                        }}>나가기</Button>
                 </Modal.Footer>
                 </Modal>
 
@@ -200,7 +202,7 @@ function NextStep() {
                     <Modal.Footer>
                         <Button variant="secondary" className='custom-cursor' onClick={shareWithParents}> 엄마, 아빠에게 자랑하기</Button>
                         <Button variant="success" className='custom-cursor' onClick={() => {
-                            navigate('/'); // 현재 페이지 새로고침
+                            navigate('/'); 
                         }}>나가기</Button>
                     </Modal.Footer>
                 </Modal>

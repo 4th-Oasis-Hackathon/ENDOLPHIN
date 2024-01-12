@@ -56,7 +56,7 @@ function TrashBin({ type, onDrop }) {
         case '종이팩전용':
             image = 종이팩쓰레기통;
             break;
-            // 추가 쓰레기통 타입에 대한 이미지도 이곳에 추가 가능
+            
         default:
             break;
     }

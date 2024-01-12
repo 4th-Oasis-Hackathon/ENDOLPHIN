@@ -115,6 +115,7 @@ function App() {
 
 
     return (
+        <>
     <>
     <div className='custom-cursor' >
         {['md'].map((expand) => (
@@ -185,6 +186,8 @@ function App() {
         <Route path='*' element={<>404</>}/>
         </Routes>
         </div>
+    </>
+
     </>
     );
 }

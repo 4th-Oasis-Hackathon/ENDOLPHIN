@@ -104,7 +104,6 @@ function NextStep() {
             effectSound2.play();
             console.log("Wrong bin!", item);
         }
-        // 드롭 로직 (예: 점수 증가)
     };
 
     const [showModal, setShowModal] = useState(false);
@@ -113,9 +112,6 @@ function NextStep() {
     const handleClose = () => setShowModal(false);
     const handleShow = () => setShowModal(true);
 
-    const handleShowResult = () => {
-        setShowResultModal(true);
-    };
     const handleCloseResult = () => {
         setShowResultModal(false);
     };
@@ -123,7 +119,6 @@ function NextStep() {
 
     const handleTimeUp = () => {
         console.log('시간이 끝났습니다!');
-        // 게임 종료 또는 다른 로직 처리
         if (!showResultModal) {
             handleShow();
         }
@@ -183,7 +178,6 @@ function NextStep() {
                 <p>제한 시간이 지났어요! <br/>  </p>
                 </Modal.Body>
                 <Modal.Footer>
-                {/* <Button variant="secondary"className='custom-cursor' onClick={handleShowResult}>결과 보기/</Button> */}
                 <Button variant="success" className='custom-cursor' onClick={() => {
                     window.location.reload(); // 현재 페이지 새로고침
                 }}>다시하기</Button>

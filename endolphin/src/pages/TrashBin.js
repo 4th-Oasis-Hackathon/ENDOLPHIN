@@ -65,7 +65,6 @@ function TrashBin({ type, onDrop }) {
         <div className='trash-bin-bg'>
             <div ref={ref} className={`trash-bin trash-bin-${type}`}>
                 {image && <img src={image} alt={`${type} trash bin`} />}
-                {/* <p>{type}</p> */}
             </div>
         </div>
     );

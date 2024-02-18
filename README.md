@@ -66,9 +66,7 @@
 
 ## 기술 스택 (Technique Used) 
 ### Code
- - React: JavaScript 라이브러리 
- - React-Bootstrap: 웹사이트 디자인 및 스타일링.
- - React Router DOM: 웹사이트 내 페이지 라우팅.
+ - React: JavaScript 라이브러리
  - React DnD: 드래그 앤 드롭 기능 구현.
  - HTML5Backend: React DnD와 함께 사용하여 드래그 앤 드롭 기능을 지원.
 
@@ -112,11 +110,6 @@
 
 [분리배출 검색] - https://bunlissuko-searching.netlify.app/ 
 
-
-
-(배포 후 뒤로가기 또는 새로고침 오류가 생겼습니다😭 추후 수정 예정) -> 수정 완료👌 
-
-+카카오톡 연동 오류
 
 
 ## 시연 영상

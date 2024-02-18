@@ -107,9 +107,6 @@ function Game() {
     const handleClose = () => setShowModal(false);
     const handleShow = () => setShowModal(true);
 
-    const handleShowResult = () => {
-        setShowResultModal(true);
-    };
     const handleCloseResult = () => {
         setShowResultModal(false);
     };
@@ -143,9 +140,6 @@ function Game() {
         }
     }, [trashItems]);
 
-    // const [isGameActive, setIsGameActive] = useState(true); ???
-
-
     return (
         <>  
         
@@ -163,18 +157,17 @@ function Game() {
             <div className='game-design-item'>
 
             {shuffledTrashItems.map((trash, index) => (
-            <div className="trash-item-display" >
-            <TrashItem key={index} id={trash.id} type={trash.type} name={trash.name} image={trash.image}/>
-            </div>
+                <div className="trash-item-display" >
+                    <TrashItem key={index} id={trash.id} type={trash.type} name={trash.name} image={trash.image}/>
+                </div>
             ))}
 
             </div>
             
             <div className='game-design-bin custom-cursor'>
-            {/* <TrashBin type="plastic" onDrop={handleDrop} /> */}
             {bins.map((type, index) => (
                 <div className='game-design-bin2'>
-                <TrashBin key={index} type={type} onDrop={handleDrop} />
+                    <TrashBin key={index} type={type} onDrop={handleDrop} />
                 </div>
             ))}
             </div>
@@ -185,7 +178,6 @@ function Game() {
                 <p>제한 시간이 지났어요! <br/>  </p>
                 </Modal.Body>
                 <Modal.Footer>
-                {/* <Button variant="secondary" className="modal-cursor custom-cursor" onClick={()=>{navigate('/')}}>결과 보기</Button> */}
                 <Button variant="success" className="modal-cursorcustom-cursor" onClick={() => {
                     window.location.reload(); // 현재 페이지 새로고침
                 }}>다시하기</Button>
@@ -194,7 +186,6 @@ function Game() {
                 }}>나가기</Button>
                 </Modal.Footer>
                 </Modal>
-
 
                 <Modal show={showResultModal} onHide={handleCloseResult} className='pre-result-modal-design custom-cursor'>
                     <Modal.Body className="modaal-body-style-step1">

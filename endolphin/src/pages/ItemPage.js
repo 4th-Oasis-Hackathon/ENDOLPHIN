@@ -5,7 +5,6 @@ function ItemPage() {
   const { id } = useParams(); // URL에서 id 파라미터를 가져옴
   const item = data.find((item) => item.id === parseInt(id)); // data에서 해당 아이템 찾기
   let navigate = useNavigate();
-  // 아이템이 존재하지 않는 경우 404 메시지 표시
     if (!item) return <div>404: Item Not Found</div>;
 
     return (
@@ -29,9 +28,6 @@ function ItemPage() {
 
           <h3 className='item-page-more'>더보기</h3>
             <div  className='item-page-more-container'>
-              {/* <div className='item-page-img'>
-              <img src={item.image} width="100px" height="100px" className='item-page-img-detail'/>
-              </div> */}
               {
                 data
                   .filter((otherItem) => otherItem.id >= 0 && otherItem.id <= 15 && otherItem.image !== item.image)

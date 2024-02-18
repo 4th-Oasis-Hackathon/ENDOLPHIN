@@ -2,15 +2,12 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useRef } from 'react';
-import {Button, Container, Form, Nav, Navbar, NavDropdown, Offcanvas} from 'react-bootstrap';
-import { Routes, Route, useNavigate, Router } from 'react-router-dom';
+import { Container, Navbar } from 'react-bootstrap';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import 쑥 from './img/쑥.png';
 import 최종쑤기 from './img/최종쑤기.png';
-import 게임전체배경 from './img/게임전체배경.png';
-import 쑤기와함께하는 from './img/쑤기와함께하는.png';
 import 쑤기랑함께하는 from './img/쑤기랑함께하는.png';
 import 분리배출 from './img/분리배출.png';
-import 쓰레기차 from './img/쓰레기차.png';
 import 최종쓰레기차 from './img/최종쓰레기차.png';
 import 게임시작버튼 from './img/게임시작버튼.png';
 import { useState } from 'react';
@@ -30,14 +27,8 @@ function App() {
 
     let navigate = useNavigate();
     const location = useLocation();
-
-    const [inputValue, setInputValue] = useState(''); // 입력 값을 관리하는 state
-    const [searchText, setSearchText] = useState('');
-
     const [playAudio, setPlayAudio] = useState(true);
     const bgmRef = useRef(null);
-
-
 
     useEffect(() => {
     if (!Kakao.isInitialized()) {
@@ -80,116 +71,88 @@ function App() {
     }
     }, []);
 
-    const handleSearchFormSubmit = (e) => {
-    e.preventDefault(); // 기본 폼 제출 동작 막기
-    handleSearch(searchText); // 검색 처리
-    };
-
-    const handleSearch = (searchText) => {
-    if (!searchText.trim()) {
-        navigate('*');
-        return;
-    }
-
-    const result = data.find(item => item.name.includes(searchText));
-    if (result) {
-        // 이동할 페이지 설정 (예: '/paper')
-        navigate(`/item/${result.id}`);
-    } else {
-        navigate('*');
-    }
-
-    };
-
     const [volume, setVolume] = useState(1); // 초기 볼륨을 100%로 설정
 
     const handleVolumeChange = (e) => {
-    const newVolume = e.target.value;
-    setVolume(newVolume);
-    if (bgmRef.current) {
-        bgmRef.current.volume = newVolume;
-    }
+        const newVolume = e.target.value;
+        setVolume(newVolume);
+        if (bgmRef.current) {
+            bgmRef.current.volume = newVolume;
+        }
     }
     const [hoverSound] = useState(new Audio(게임재생버튼));
 
-
-
     return (
-        <>
-    <>
-    <div className='custom-cursor' >
-        {['md'].map((expand) => (
-        <Navbar expand={false} className="bg-body-tertiary mb-3 custom-cursor">
-            <Container fluid>
-            <Navbar.Brand className="title-location custom-cursor" onClick={()=>{ navigate('/') }}>
-                분리<span className="highlight custom-cursor">쑥</span>오
-                <img 
-                src={쑥}
-                width="40"                    
-                height="40"                  
-                className="d-inline-block align-top logo-img"/>
-                </Navbar.Brand>
-            </Container>
-        </Navbar>
-        ))}
+            <div className='custom-cursor' >
+                {['md'].map((expand) => (
+                <Navbar expand={false} className="bg-body-tertiary mb-3 custom-cursor">
+                    <Container fluid>
+                    <Navbar.Brand className="title-location custom-cursor" onClick={()=>{ navigate('/') }}>
+                        분리<span className="highlight custom-cursor">쑥</span>오
+                        <img 
+                        src={쑥}
+                        width="40"                    
+                        height="40"                  
+                        className="d-inline-block align-top logo-img"/>
+                        </Navbar.Brand>
+                    </Container>
+                </Navbar>
+                ))}
 
-        <Routes>
-        
-        <Route path='/' element={<>
-            <div onClick={() => setPlayAudio(!playAudio)}>
-                <img src={playAudio ? 진짜음소거해제 : 진짜음소거} className='sound-control' />
-            </div>
+                <Routes>
+                
+                <Route path='/' element={<>
+                    <div onClick={() => setPlayAudio(!playAudio)}>
+                        <img src={playAudio ? 진짜음소거해제 : 진짜음소거} className='sound-control' />
+                    </div>
 
 
-        <div className='AppBG'>
-            <img 
-                src={쑤기랑함께하는} 
-                className="ssuk-with" 
-            />
+                <div className='AppBG'>
+                    <img 
+                        src={쑤기랑함께하는} 
+                        className="ssuk-with" 
+                    />
+                    <img 
+                        src={분리배출} 
+                        className="bunli-location" 
+                    />
+                    <div className='main-character-location'>
+                    <img 
+                        src={최종쑤기} 
+                        className="ssuk-location" 
+                        />
+                    <img 
+                        src={게임시작버튼} 
+                        className="game-start-btn"  
+                        onClick={() => {navigate('/video')}}
+                        onMouseEnter={() => hoverSound.play()}
+                        />
+                    <img 
+                        src={최종쓰레기차} 
+                        className="trashcar-location" 
+                        />
+                    </div>
+                    </div>
+                </>}/>
 
-            <img 
-                src={분리배출} 
-                className="bunli-location" 
-            />
-            <div className='main-character-location'>
-            <img 
-                src={최종쑤기} 
-                className="ssuk-location" 
-                />
-            <img 
-                src={게임시작버튼} 
-                className="game-start-btn"  
-                onClick={() => {navigate('/video')}}
-                onMouseEnter={() => hoverSound.play()}
-                />
-            <img 
-                src={최종쓰레기차} 
-                className="trashcar-location" 
-                />
-            </div>
-            </div>
-        </>}/>
-
-        {/* URL 파라미터 */}
-        <Route path='/item/:id' element={<><ItemPage/></>}/>
-        <Route path='/video' element={<VideoComponent/>}/>
-        <Route path='/game' element={<>
-            <div onClick={() => setPlayAudio(!playAudio)}>
-                <img src={playAudio ? 진짜음소거해제 : 진짜음소거} className='sound-control' />
-            </div>
-        <Game/></>}/>
-        <Route path='/game_step2' element={<>
-            <div onClick={() => setPlayAudio(!playAudio)}>
-                <img src={playAudio ? 진짜음소거해제 : 진짜음소거} className='sound-control' />
-            </div>
-        <NextStep/></>}/>
-        <Route path='*' element={<>404</>}/>
-        </Routes>
-        </div>
-    </>
-
-    </>
-    );
+                {/* URL 파라미터 */}
+                <Route path='/item/:id' element={<ItemPage/>}/>
+                <Route path='/video' element={<VideoComponent/>}/>
+                <Route path='/game' element={<>
+                    <div onClick={() => setPlayAudio(!playAudio)}>
+                        <img src={playAudio ? 진짜음소거해제 : 진짜음소거} className='sound-control' />
+                    </div>
+                <Game/></>}/>
+                <Route path='/game_step2' element={<>
+                    <div onClick={() => setPlayAudio(!playAudio)}>
+                        <img src={playAudio ? 진짜음소거해제 : 진짜음소거} className='sound-control' />
+                    </div>
+                <NextStep/></>}/>
+                <Route path='*' element={<>404</>}/>
+                </Routes>
+                </div>
+    
+        );
 }
 
 export default App;

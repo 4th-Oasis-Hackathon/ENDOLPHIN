@@ -1,4 +1,4 @@
-![image](https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/3161422c-9180-47d4-83c0-6eae5909f5a6)# &Dolphin *[4th-Oasis-Hackathon]*
+# &Dolphin [4th-Oasis-Hackathon]
 **돌고래들은 무리를 지어 생활하며 서로 협력합니다. 우리 팀 'And Dolphin'은 서로 협력하고, 'Endorphin'과 같이 사람들에게 행복을 주는 점이 비슷합니다.**
 
 
@@ -97,8 +97,10 @@
 
  - Figma: 홈페이지 구성 및 디자인
 
+   
+<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/d96fe159-9496-4930-970e-8fa0997cfd9a" width="490" height="230"/>
 
-![Figma](https://cdn.discordapp.com/attachments/1140269063218679882/1146455210886189066/image.png)
+
 
 
 

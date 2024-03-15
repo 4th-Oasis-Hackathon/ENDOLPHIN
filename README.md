@@ -1,4 +1,4 @@
-# &Dolphin *[4th-Oasis-Hackathon]*
+![image](https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/3161422c-9180-47d4-83c0-6eae5909f5a6)# &Dolphin *[4th-Oasis-Hackathon]*
 **돌고래들은 무리를 지어 생활하며 서로 협력합니다. 우리 팀 'And Dolphin'은 서로 협력하고, 'Endorphin'과 같이 사람들에게 행복을 주는 점이 비슷합니다.**
 
 
@@ -74,24 +74,24 @@
 ### Design
  - ibis Paint X: 캐릭터 디자인
 <p>
-<img src="https://cdn.discordapp.com/attachments/1140898430168879114/1146401895024427018/154_1.gif" width="200" height="200"/>
+<img src="https://media.discordapp.net/attachments/1140898430168879114/1146401895024427018/154_1.gif?ex=6603fef6&is=65f189f6&hm=c91c92848f0f54a6dd7aa9e74adb07a0a0c40c84b2de273d22bbe718dfe1a47a&=&width=450&height=450" width="200" height="200"/>
 &#160;&#160;
-<img src="https://cdn.discordapp.com/attachments/1140898430168879114/1146401895401926716/231_1.gif" width="200" height="200"/>
+<img src="https://media.discordapp.net/attachments/1140898430168879114/1146401895401926716/231_1.gif?ex=6603fef6&is=65f189f6&hm=8b0b5628675dccb669af7ee79ac954d08bd615180e3b4e6151d8bca9e21a7e07&=&width=450&height=450" width="200" height="200"/>
 </p>
 <p>
-<img src="https://cdn.discordapp.com/attachments/1140898430168879114/1146417241966006322/235.gif" width="200" height="200"/>
+<img src="https://media.discordapp.net/attachments/1140898430168879114/1146417241966006322/235.gif?ex=66040d41&is=65f19841&hm=2e729e2458d209131b4bf8d9bee2cb3420d6d8103d4d45e75bb565de93feae04&=&width=450&height=450" width="200" height="200"/>
 &#160;&#160;
-<img src="https://cdn.discordapp.com/attachments/1140898430168879114/1146417242335101029/236.gif" width="200" height="200"/>
+<img src="https://media.discordapp.net/attachments/1140898430168879114/1146417242335101029/236.gif?ex=66040d41&is=65f19841&hm=51aeb4f2fbb71483d0d723b60b4455f7069a6dd4a3cdccdf71a2c6097bacc3a7&=&width=450&height=450" width="200" height="200"/>
 </p>
 
 
  - ibis Paint X Brush: 캐릭터 스케치  
  <p>
-<img src="https://cdn.discordapp.com/attachments/1140898430168879114/1146420632389689435/Screenshot_20230830_210625_ibisPaint_X.jpg" width="200" height="400"/>
+<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/e43353ac-d26a-4adf-9a8e-ae162e05f2b0" width="200" height="400"/>
 &#160;&#160;
-<img src="https://cdn.discordapp.com/attachments/1140898430168879114/1146417537362436126/Screenshot_20230830_210705_ibisPaint_X.jpg" width="200" height="400"/>
+<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/c1c4ca47-c8b0-4ff5-a2f8-f359dd97fdab" width="200" height="400"/>
 &#160;&#160;
-<img src="https://cdn.discordapp.com/attachments/1140898430168879114/1146417537605718137/Screenshot_20230830_210749_ibisPaint_X.jpg" width="200" height="400"/>
+<img src="https://github.com/4th-Oasis-Hackathon/ENDOLPHIN/assets/68066598/aa2c8bc0-51e1-4cb9-aede-63344b9b1d5d" width="200" height="400"/>
 </p>
 
 
